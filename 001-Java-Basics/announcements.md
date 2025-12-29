@@ -1,0 +1,13 @@
+# 12/29/2025:
+- All of the notes and demos will be hosted on Github (link TBD)
+  - Will send link to main chat
+- Revature Pro - can read up more on the different topics
+- I will set up breakout rooms for you to be in
+  - Feel free to talk, chat, work on filling out paperwork from orientation
+  - Please remain on call until 5 EST
+  - I will be in the main room 
+- We should be getting access to a Teams environment (includes different text channels)
+  - Will set up places for Q&A, helpful links, off-topic
+- Will reconvene on the same link starting at 9 EST going forward
+- We also have sharepoint where files can be hosted
+  - Will probably include project descriptions, etc.
