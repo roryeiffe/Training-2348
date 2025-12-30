@@ -164,9 +164,77 @@ We'll need 2 things:
         - public int add(int a, int b);
         - public int add(int a, int b, int c);
   
+## Methods
+- Used to perform some action
+- Name - name of the method
+- Output Type - what type of value will be returned
+  - void - if nothing is returned
+- Parameters - what is inputted to the method (define what the types will be)
+  - When we invoke the method, we just need to make sure that the values that are passed in match the type of the 
+  - parameters that were defined in the method
+- Body - the code that will be executed
+  - should be returning a value if the return type is not void
+  
 ## Constructors
 - Special methods that help us construct/create new instances of the class we have defined
 - In Java, constructors take the same name of the class
 - We can also have multiple different constructors as long as they have different parameters (overloading)
 - A constructor is responsible for initializing the object, usually by setting values for the different fields
+- If we don't have any constructor defined for a class, Java will create one for us (no arguments and doesn't really do much)
+
+
+
+## Operators
+- Math: +, -, *, /, %
+- Boolean Operators:
+  - ! - not
+  - && - and
+  - || - or
+- Comparison
+  - == checking if 2 references are the same
+
+## Arrays
+- Let us store multiple values in a predefined structure
+  - We allocate the space that we need ahead of time
+- int[] grades = new int[] {90,90,80,75,100};
+- String [] foods = new String[5];
+- Arrays.toString(array) => convert to a string
+
+## Variable Scopes:
+- We can define variables for different scopes in which they can be used
+- Method Scope - defined within a method
+- Instance Scope - fields that are scoped to the class instance
+- Static Scope - fields can be scoped to the class overall
+- Block Scope - defined in their designated "block" (for loops, if statements)
+
+## Modifiers
+
+### Access Modifiers
+- private - can be applied to a method or a field - cannot be accessed from any other class
+- public - can be accessed from anywhere in the project
+  - public methods can be invoked from anywhere
+  - public fields can be accessed anywhere
+  - We usually make our classes public because we usually want our classes to be accessible from anywhere
+- default (package) - can be accessed from anywhere within the package
+  - Not to be confused with the "default" keyword to make concrete methods in an interface
+  - when we give an entity (field, class, method) the default access, we don't actually type out "default", just leave it blank
+- protected - can be accessed either
+  - in the same package
+  - any child class
+
+### Non-Access Modifiers
+- static - is we use this keyword, it will scope the variable/method to the class rather than the instance
+  - Methods:
+    - static method can be invoked from class or an object
+    - non-static method can only be called from an instantiated object
+    - We typically use static methods/fields when we're not dealing with state
+  - Fields:
+    - Attached to the class
+    - Only useful if the value is the same across the entire class
+  - The "static" keyword is place in front of methods and variables to make them static
+  - From a non-static context can access both static and non-static fields/methods
+  - From a static context, can ONLY access static fields/methods
+- final
+  - Final variables cannot be re-assigned
+- abstract
 
