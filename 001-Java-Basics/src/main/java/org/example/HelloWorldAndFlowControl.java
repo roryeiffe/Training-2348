@@ -1,10 +1,10 @@
-package com.revature;
+package org.example;
 
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class HelloWorld {
+public class HelloWorldAndFlowControl {
     public static void main(String[] args) {
 //        System.out.println("Hello World");
 //        primitiveDemo();

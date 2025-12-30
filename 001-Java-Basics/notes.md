@@ -128,13 +128,32 @@ We'll need 2 things:
 - We can create different classes and create instances from those classes
 - 4 Pillars of OOP help us to adhere to best practices/standards
   - Abstraction - Hiding away the implementation details of methods
-    - We can define the expected input/ouptut/behavior, but we leave the implementation details to another class
+    - We can define the expected input/output/behavior, but we leave the implementation details to another class
     - In Java, we can achieve this in 2 ways:
       - Abstract Class - can have abstract methods (meaning no implementation details) and concrete methods ("normal" methods we've seen that have code in them)
       - Interface - we don't see any concrete methods, just the abstract method declarations
+        - We can use the default keyword to include concrete methods in an interface
+        - We will make use of interfaces when creating DAOs (Data Access Objects)
   - Inheritance - Parent-Child relationship where fields and method behaviors can be inherited from parent class
     - Example: Animal -> Mammal -> Dog
     - Can also override methods that are inherited if we need to switch up the functionality
+      - Child can expand on the functionality of the parent
+      - Open for extension, closed for modification (can't change what the parent does but the child can expand on those functionalities)
+    - Types of Inheritance
+      - Single - One parent and one child
+      - Multilevel - Linear family tree, one child class inherits from one class which inherits from another
+      - Hierarchical - one parent with many children inheriting from it
+      - Multiple (NOT ALLOWED IN JAVA with classes) - one class inherits from multiple parents
+      - Hybrid (NOT ALLOWED IN JAVA with classes) - combination of Multiple and Hierarchical
+      - Multiple and Hybrid are achievable through interfaces
+      - Rule of Thumb - One class cannot inherit multiple classes
+    - "Super" keyword - used to access different aspects of the parent class
+      - We can use it to access the constructor of the parent class
+        - super();
+      - We can also access/invoke methods from the parent class
+        - super.methodName();
+      - We can use it to access fields from the parent class
+        - super.fieldName;
   - Encapsulation - Packaging everything about an object into a singular unit
     - The fields themselves are hidden (In Java, we use "private" keyword)
     - But, we still have public methods (getters and setters) that provide access
@@ -144,3 +163,10 @@ We'll need 2 things:
       - 2 methods with the same name in the same class but either type/order/number of parameters
         - public int add(int a, int b);
         - public int add(int a, int b, int c);
+  
+## Constructors
+- Special methods that help us construct/create new instances of the class we have defined
+- In Java, constructors take the same name of the class
+- We can also have multiple different constructors as long as they have different parameters (overloading)
+- A constructor is responsible for initializing the object, usually by setting values for the different fields
+
