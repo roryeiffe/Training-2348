@@ -29,4 +29,8 @@ public class Dog extends Mammal{
                 ", warmBlooded=" + warmBlooded +
                 '}';
     }
+
+//    public void scratchEar() {
+//        System.out.println("Dog is scratching ear.");
+//    }
 }

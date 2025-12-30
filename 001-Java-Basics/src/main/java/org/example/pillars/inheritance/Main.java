@@ -20,5 +20,10 @@ public class Main {
 
         Dog dog = new Dog("Corgi", 10.0, 4);
         System.out.println(dog);
+
+        // down-casting, converting from animal to dog:
+        Dog dog2 = (Dog) animal1;
+//        dog2.scratchEar();
+
     }
 }

@@ -16,5 +16,8 @@ public class Main {
         Pig pig = new Pig();
         pig.speak();
         pig.sleep();
+
+        Cow cow2 = (Cow) animal;
+        cow2.speak();
     }
 }

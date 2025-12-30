@@ -236,5 +236,131 @@ We'll need 2 things:
   - From a static context, can ONLY access static fields/methods
 - final
   - Final variables cannot be re-assigned
+    - meaning we can't re-assign using the = operator
+    - We can modify field of a final object as long as those field aren't marked as final
+  - Final methods - cannot be overridden
+  - Final classes - cannot be extended
 - abstract
+  - Makes class/method abstract
+    - Abstract classes can have abstract methods inside
+    - Abstract methods are just the declaration, doesn't include the body
+      - Can be implemented by a child class
 
+## Casting
+- Casting is the process of converting from one type to another 
+- ex: converting from int to double (primitive casting)
+- With inheritance, reference casting
+
+### Primitive Casting
+
+- boolean - true/false value
+- byte - 8-bit signed integer
+- char - unicode character 'a', '1', '%'
+- short - 16-bit signed integer
+- int - 32-bit signed integer
+- long - 64-bit signed integer
+- float - 32-bit floating point
+- double - 64-bit floating point
+
+#### Widening
+- Going from smaller data type to larger
+- int -> long -> double
+- Implicit
+- No data loss
+
+#### Narrowing
+- Going from a larger type to smaller
+- Requires an explicit cast
+- Could lose precision/data
+- double -> long -> int
+
+### Reference Casting
+- Working with inheritance, requires a parent-child relationship
+
+#### Upcasting
+- Casting a child to a parent type
+- Done implicitly, we don't have to explicitly cast
+- Always safe, will not lead to errors
+- ex: Animal animal = new Cow();
+
+#### Downcasting
+- Casting a parent reference back to a child type
+- Requires an explicit cast
+- Can cause runtime errors
+- Cow cow2 = (Cow) animal;
+
+## Memory
+- Memory is comprised of stack and heap
+- Each section contains different things
+
+![Stack And Heap Memory](https://www.baeldung.com/wp-content/uploads/2018/07/java-heap-stack-diagram.png)
+
+### Stack
+- Hold primitive values and variable references
+
+### Heap
+- Object values
+- Whenever we see the keyword "new", that means a new object is being created on the heap
+- Notably, the heap includes the String pool
+
+## Strings
+- Representations of strings of characters
+- Immutable
+- Some useful methods
+  - charAt(int index) - Returns the char value at the specified index.	
+  - isEmpty() Returns true if, and only if, length() is 0.
+  - length() - Returns the length of this string.
+  - https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
+- Strings are defined like primitives (no use of "new" keyword) even though String is a class
+
+### String Pool
+- Exists in the heap
+- To save memory, if we have 2 or more strings with the same value, the string will only be created once in the string pool and the variables
+- will reference that same string
+- We can create a String outside of the string pool using the new keyword:
+  - String d = new String("cat");
+    - This is not really done in practice because it doesn't utilize the String Pool's memory-saving functionality
+
+## Equality
+- Can always use == to compare the reference of 2 values
+  - For primitives, works just like you'd expect (1 == 1) would evaluate to true ('a' == 'a');
+  - For objects, compares the reference so even if the individual fields are the same, will only evaluate 
+  - to true if we're comparing the exact same reference
+- For classes that have implemented the .equals method
+  - You can custom-define the conditions for equality
+    - Usually follows similar pattern of checking the type, ensuring non-null, comparing the fields directly
+      - For example, String .equals() method is defined like: Compares this string to the specified object. 
+      - The result is true if and only if the argument is not null and is a String object that represents the same sequence of characters as this object.
+
+### String Builder and String Buffer
+- Mutable representations of strings
+- String Builder is not thread-safe
+- String Buffer is thread-safe
+
+## The Object Class
+- To recap, we have classes in Java that serve as the blueprint for objects
+  - Objects are the instances of those classes
+- There is a class in Java called "Object"
+- Every class has Object as a superclass, meaning it inherits all of the methods from the Object class.
+  - Inheritance is one of the 4 pillars of OOP
+- Methods
+  - equals - determine if 2 objects are equal
+    - by default (until we override the equals method), behavior will be like == (checking the reference)
+    - Keep in mind that when creating a new class, fill out the equals method to actually check for equality
+  - hashCode - convert our object to an int representation
+    - Hashcode is usually calculated with the same fields that are included in the .equals
+    - Integer representations of objects are useful because they can serve as pointers HashMaps/HashSets
+    - 2 objects that are equal to each other (when compared using .equals()), will return the same hash code
+    - 2 objects that are different from each other usually produce different hashcodes
+      - Overlaps can occur (too many overlaps can make HashMap and HashSet less efficient)
+  - toString - returns a string representation of the object
+  - getClass - returns the runtime class of the object
+  - clone - creates and returns a copy of the object
+  - finalize - marking an object eligible for garbage collection (cleanup) (deprecated)
+  - For most entity classes (classes that represent an object), we will fill out .equals(), .hashCode(), and .toString()
+
+## Garbage Collection
+- Automatic process by which Java manages memory and ensures the program runs efficiently
+- Objects are allocated on the heap
+- Through the process of Garbage Collection, Java automatically frees up space that is not needed anymore
+  - If an object is unreferenced, then it is marked for Garbage Collection
