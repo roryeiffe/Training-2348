@@ -1,6 +1,7 @@
 package org.example.collections;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 
@@ -93,6 +94,33 @@ public class Main {
 
         //one last peek just to prove the first element was removed
         System.out.println("The next Pokemon in line is: " + pokemonQueue.peek().getName());
+
+        System.out.println("=========================================(Maps)");
+
+        //HashMap - General use Map, stores data in key-value pairs
+
+        HashMap<Integer, String> trainers = new HashMap<>();
+
+        //we can add to a Map with .put()
+        trainers.put(1, "Ash");
+        trainers.put(2, "Misty");
+        trainers.put(3, "Brock");
+
+        System.out.println("Our trainers are: " + trainers);
+
+        //We can access values by their key with .get()
+        System.out.println("Our second trainer is: " + trainers.get(2));
+        //This is not getting by index!!! It's getting by key
+
+        /* Why are using Integer instead of int??
+
+            Integer is a WRAPPER CLASS - the object representation of the primitive int type.
+            There is a wrapper class for each primitive in Java for cases when only Objects are allowed
+            Collections and Maps, for instance, only allow objects. So we need to Wrapper classes.
+
+            Specifically, Collections and Maps only allow objects because GENERICS only allow objects
+
+         */
 
     }
 
