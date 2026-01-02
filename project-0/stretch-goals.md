@@ -4,7 +4,9 @@
 - Prioritized completed goals
   - For example, if you start stretch goal A, recommended to complete A before starting B
 
-## The Stretch Goals:
+## The Stretch Goals
+
+**(For returning associates, please select 1 goal from each category (5 total))**
 
 ### Security
 
