@@ -13,7 +13,7 @@
 11. Keep the port default at 5432. 
 12. Locale can be default.
 13. It should give a summary of the installation details, click next. And then click next to start the installation. 
-14. Once the install is done, it will prompt you to launche stack builder, we can check the box and click Finish.
+14. Once the install is done, it will prompt you to launch stack builder, we can check the box and click Finish.
 
 ## Stack Builder
 - In the drop-down select PostgreSQL option
