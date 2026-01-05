@@ -14,6 +14,14 @@
 - CRUD - Create, Read, Update, Delete
 - Typically have one DAO for each entity
 
+### Service Layer
+- As we know the data/DAO layer interacts directly with the database
+- We also want to make a command line interface so that we can type in the console in our Java app and have those commands be sent to the database
+  - We could, in theory, just have the command line layer directly call the DAO layer
+  - It is best practice to include a service layer that sits between the data layer and the commandline (or controller) layer
+  - Service classes are typically "boring", standard
+    - But, in certain cases, we can and should include logic that is directly related to the project itself
+
 ### Singleton Design Pattern
 - We only need/have a single instance of the class, rather than multiple instances
 - For example, our DAO objects won't really care about state, so we only need one instance of this in our whole project

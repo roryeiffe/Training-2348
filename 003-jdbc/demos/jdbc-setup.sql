@@ -11,5 +11,10 @@ insert into person values (default, 'shelter', 'password');
 insert into pet values (default, 'fluffy', 'cat', 'cat food', 1);
 insert into pet values (default, 'inky', 'cat', 'cat food', 1);
 insert into pet values (default, 'rufus', 'dog', 'dog food', 1);
+insert into pet values(default, 'scooby', 'dog', 'scooby snacks', 1);
 
 SELECT * FROM pet WHERE id = 1;
+
+select * from pet;
+
+select * from person;

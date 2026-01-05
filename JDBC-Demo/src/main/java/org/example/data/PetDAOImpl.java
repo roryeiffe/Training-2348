@@ -18,7 +18,39 @@ public class PetDAOImpl implements PetDAO{
 
     @Override
     public Pet insert(Pet pet) {
-        return null;
+        String sql = "insert into pet(id, name, species, food, owner_id) values (default, ?, ?, ?, 1)";
+
+        try {
+            // to get the generated id value, we have to pass in a flag:
+            PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+            // fill in the parameters:
+            preparedStatement.setString(1, pet.getName());
+            preparedStatement.setString(2, pet.getSpecies());
+            preparedStatement.setString(3, pet.getFood());
+
+            // use executeUpdate() for insert, update, delete:
+            int count = preparedStatement.executeUpdate();
+
+            // if exactly 1 row was updated, we know this insertion was successful:
+            if(count == 1) {
+                // we want to return the full pet object (with the generated id)
+                ResultSet resultSet = preparedStatement.getGeneratedKeys();
+
+                // increment the resultSet so it points to the generated value
+                resultSet.next();
+
+                // can extract the id:
+                int generatedId = resultSet.getInt(1);
+
+                // set the corresponding pet object's id field:
+                pet.setId(generatedId);
+            }
+
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return pet;
     }
 
     // getting a pet by id:
@@ -93,11 +125,102 @@ public class PetDAOImpl implements PetDAO{
 
     @Override
     public Pet update(Pet pet) {
+        String sql = "UPDATE pet set name=?, species=?, food=? WHERE id=?;";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+            preparedStatement.setString(1, pet.getName());
+            preparedStatement.setString(2, pet.getSpecies());
+            preparedStatement.setString(3, pet.getFood());
+            preparedStatement.setInt(4, pet.getId());
+
+            int count = preparedStatement.executeUpdate();
+
+            if(count == 1) {
+                return pet;
+            }
+            else if (count == 0) {
+                // TODO: Setup custom exceptions:
+                System.out.println("No pets were updated.");
+                return null;
+            }
+            else {
+                // TODO: Setup custom exceptions
+                System.out.println("Multiple rows were updated.");
+                return null;
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+
         return null;
     }
 
     @Override
     public boolean delete(int id) {
+        String sql = "DELETE FROM pet WHERE id =?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+
+            int count = preparedStatement.executeUpdate();
+
+            if(count == 1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        // If we reach this, that means that some exception was thrown, so we return false since the delete didn't happen
         return false;
+    }
+
+    @Override
+    public boolean adopt(int personId, int petId) {
+        String sql = "UPDATE pet SET owner_id = ? WHERE id = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, personId);
+            preparedStatement.setInt(2, petId);
+            int count = preparedStatement.executeUpdate();
+
+            if(count == 1) return true;
+
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public List<Pet> getAdoptedPets(int personId) {
+        String sql = "SELECT * FROM pet WHERE owner_id = ?;";
+        List<Pet> adoptedPets = new ArrayList<>();
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, personId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String species = resultSet.getString("species");
+                String food = resultSet.getString("food");
+
+                Pet pet = new Pet(id, name, species, food);
+                adoptedPets.add(pet);
+            }
+
+
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+
+        return adoptedPets;
     }
 }
