@@ -1,0 +1,16 @@
+
+B
+java:S2129" Remove this "String" constructor(ò¥–øÿÿÿÿ8¬§®†·3
+G	java:S106"+Replace this use of System.out by a logger.(ëë¢Ø8›é³†·3
+X
+java:S1854"6Remove this useless assignment to local variable "s1".(áÂÛ¼úÿÿÿÿ8¦§®†·3
+B
+java:S2129" Remove this "String" constructor(áÂÛ¼úÿÿÿÿ8ëÓ®†·3
+I
+java:S1481"'Remove this unused "s1" local variable.(áÂÛ¼úÿÿÿÿ8ıÛ¯†·3
+S
+java:S1854"6Remove this useless assignment to local variable "s2".(€öæ†8ëÓ®†·3
+=
+java:S2129" Remove this "String" constructor(€öæ†8‘¼¯†·3
+D
+java:S1481"'Remove this unused "s2" local variable.(€öæ†8¶¢°†·3

@@ -1,0 +1,7 @@
+
+Z
+java:S1854"8Remove this useless assignment to local variable "dog2".(þ¦·Äúÿÿÿÿ8½ˆ´„·3
+L	java:S106"+Replace this use of System.out by a logger.(Ô‚ˆ®øÿÿÿÿ8Ð¾ÿþ¶3
+K
+java:S1481")Remove this unused "dog2" local variable.(þ¦·Äúÿÿÿÿ8Âˆ´„·3
+]	java:S125"<This block of commented-out lines of code should be removed.(øžÛÓýÿÿÿÿ8Âˆ´„·3

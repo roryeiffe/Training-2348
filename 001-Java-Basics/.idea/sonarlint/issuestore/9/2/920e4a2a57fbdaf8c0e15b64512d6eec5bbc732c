@@ -1,0 +1,7 @@
+
+‚
+java:S4165"eRemove this useless assignment; "capital" already holds the assigned value along all execution paths.(’Öµ’8ð£óÿ¶3
+P
+java:S1172".Remove this unused method parameter "capital".(²Žà¹üÿÿÿÿ8ô£óÿ¶3
+L
+java:S1656"/Remove or correct this useless self-assignment.(’Öµ’8ô£óÿ¶3

@@ -1,0 +1,14 @@
+
+D
+java:S2189
+""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ8†…ì€·3
+R
+java:S1854"5Remove this useless assignment to local variable "y".(µÞ¢ö8Œ…ì€·3
+X	java:S125"<This block of commented-out lines of code should be removed.(±ÝÊ²8ŠÒê€·3
+C
+java:S1481"&Remove this unused "y" local variable.(µÞ¢ö8…ì€·3
+X	java:S125"<This block of commented-out lines of code should be removed.(‹Ò»€8Ž…ì€·3
+C
+java:S1481"&Remove this unused "x" local variable.(š—úó8Òê€·3
+S
+java:S1068"1Remove this unused "instanceScope" private field.(¾ó…µýÿÿÿÿ8ÔÆè€·3

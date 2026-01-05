@@ -1,0 +1,24 @@
+
+l
+java:S18745"JDon't override a deprecated method or explicitly mark it as "@Deprecated".(ÖÒ˜Ùùÿÿÿÿ8Ìº¶†·3
+O
+java:S11135"-Do not override the Object.finalize() method.(ÖÒ˜Ùùÿÿÿÿ8Îº¶†·3
+L	java:S1066"+Replace this use of System.out by a logger.(—±©şÿÿÿÿ8œ·‰†·3
+G	java:S1067"+Replace this use of System.out by a logger.(‚æûÙ8œ·‰†·3
+R
+java:S18748"0Remove this use of "finalize"; it is deprecated.(¯¶ú“üÿÿÿÿ8Ñº¶†·3
+o
+java:S2975J"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(™”” 8ğà–†·3
+D
+java:S1185J"(Remove this method to simply inherit it.(™”” 8òà–†·3
+\
+java:S1854i":Remove this useless assignment to local variable "movie3".(—èƒêûÿÿÿÿ8ñº†·3
+L	java:S106Y"+Replace this use of System.out by a logger.(¿¢„¯ûÿÿÿÿ8œ·‰†·3
+L	java:S106Z"+Replace this use of System.out by a logger.(†«†Åüÿÿÿÿ8·‰†·3
+G	java:S106^"+Replace this use of System.out by a logger.(æÌ—8·‰†·3
+L	java:S106`"+Replace this use of System.out by a logger.(êÿï©üÿÿÿÿ8·‰†·3
+L	java:S106a"+Replace this use of System.out by a logger.(Î¸ç¾ÿÿÿÿÿ8·‰†·3
+G	java:S106c"+Replace this use of System.out by a logger.(·¾Œ–8”Š†·3
+L	java:S106d"+Replace this use of System.out by a logger.(Şôì’üÿÿÿÿ8¦‘‹†·3
+F	java:S106e"+Replace this use of System.out by a logger.(ùêÅy8³º†·3
+L	java:S106f"+Replace this use of System.out by a logger.(ğ²¬·øÿÿÿÿ8³º†·3
