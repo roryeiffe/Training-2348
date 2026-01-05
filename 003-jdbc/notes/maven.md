@@ -18,3 +18,16 @@
 - Name our project
 - Select JDK
 - Select an archetype (template), select the maven quick start archetype
+
+### pom.xml
+- Project Object Model
+- Contains information about the project including name, version, website url (if applicable)
+- Dependencies - 
+  - Enclosed within the "dependencies" tag, we have individual "dependency" tags that contain information about the external libraries that we're using for our project
+- Whenever we make edits to the pom, we need to resync the changes
+  - In IntelliJ, there is a pop-up button that lets us sync the Maven changes
+
+### Maven Central Repository
+- Website in which you can search for Maven dependencies
+- mvnrepository.com
+- We can filter by version and copy the xml code directly from the website and paste into our pom.xml

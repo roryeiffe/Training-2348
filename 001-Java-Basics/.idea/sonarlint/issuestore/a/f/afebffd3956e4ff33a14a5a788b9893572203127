@@ -1,0 +1,24 @@
+
+e
+java:S3518"CMake sure this expression can't be zero before doing this division.(½§±Êøÿÿÿÿ8ôÚÀô¸3
+G	java:S106"+Replace this use of System.out by a logger.(×•ûè8²ÛÀô¸3
+W	java:S125"<This block of commented-out lines of code should be removed.(˜Üä8³ÛÀô¸3
+G	java:S106"+Replace this use of System.out by a logger.(Ñß¾ª8¶ÛÀô¸3
+H
+java:S1481"&Remove this unused "i" local variable.(½§±Êøÿÿÿÿ8äÛÀô¸3
+L	java:S106"+Replace this use of System.out by a logger.(ëİÛ›şÿÿÿÿ8íÛÀô¸3
+G	java:S106 "+Replace this use of System.out by a logger.(²æ‘¸8òÛÀô¸3
+L	java:S106'"+Replace this use of System.out by a logger.(Ö£•ôüÿÿÿÿ8ıÛÀô¸3
+G	java:S106)"+Replace this use of System.out by a logger.(½¿8ÿÛÀô¸3
+G	java:S106,"+Replace this use of System.out by a logger.(˜üÙƒ8ƒÜÀô¸3
+L	java:S106."+Replace this use of System.out by a logger.(±ÆÀºùÿÿÿÿ8†ÜÀô¸3
+G	java:S1062"+Replace this use of System.out by a logger.(×Æáî8ˆÜÀô¸3
+G	java:S1067"+Replace this use of System.out by a logger.(ùÜÀ8ŠÜÀô¸3
+L	java:S106A"+Replace this use of System.out by a logger.(ïñ©úÿÿÿÿ8ŒÜÀô¸3
+X	java:S125;"<This block of commented-out lines of code should be removed.(¤Ôöó8ÜÀô¸3
+X	java:S125="<This block of commented-out lines of code should be removed.(¥ØÀ‘8ÜÀô¸3
+L	java:S106T"+Replace this use of System.out by a logger.(ä¾ñÕûÿÿÿÿ8©ÜÀô¸3
+\
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8¿ÜÀô¸3
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ÀÜÀô¸3
