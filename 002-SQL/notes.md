@@ -287,3 +287,56 @@ D - Delete - delete, drop
 ### Equi vs Theta Join
   - Theta Join - a join that utilizes a condition to join tables together
   - Equi Join - a join that utilizes the equals operator ( as opposed to <, >)
+
+
+## Indexes
+- A structure in SQL that helps with efficiency, specifically with querying data
+- Book
+  - In a book, we can look at the index at the back to find specific topics,people, etc. and what pages they're on
+  - Using this, we can lookup things very quickly
+  - Without the index, would have to search the whole book manually
+### In SQL
+- We can apply an index to a given column(s) on a table
+  - Stores the indexed columns in a sorted structure (tree)
+    - Keeps pointers to the original rows
+  - When we query, we can quickly find matching records (more quickly than if we didn't have an index)
+
+### Good use Cases for Indexes:
+- Table contains many rows
+- More complex queries, especially ones with "WHERE", "JOIN", "ORDER BY", "GROUP BY"
+  - If the same column(s) are being searched more than once
+- Primary Keys, Foreign Keys
+  - Index is automatically created for primary keys and unique columns
+- Columns used in "WHERE", "JOIN", "ORDER BY" clauses
+### Cases where Indexes might not help as much
+- Columns have few unique values (is_adopted, gender, race)
+- Columns that aren't used in many queries or very often
+- Columns that are updated very frequently-
+
+
+
+
+
+
+## PL/SQL
+- Procedural Language
+  - Allowing us to utilize procedural aspects of coding in our SQL programs such as
+    - Variables
+    - Loops
+    - Conditionals
+    - Error Handling
+    - Reusable Blocks of code such as
+      - Stored Procedures
+      - Functions
+  - Useful for when we have a bunch repeated operations, we can set up a stored procedure or a function to meet those needs
+
+### Stored Procedure
+- A block of code in PL/SQL
+  - Performs an action
+  - Can accept input parameters
+  - Does not return a value directly, so useful when we want the procedure to "do something" (insert/update)
+
+### Functions
+- Block of code in PL/SQL
+  - Returns one value
+  - Useful for when we need to compute a value
