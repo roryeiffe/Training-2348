@@ -48,7 +48,7 @@ public class PersonService {
             System.out.println("Person's name is invalid.");
             return false;
         }
-        return this.petDAO.adopt(person.getId(), petID);
+        return this.petDAO.adoptProcedure(person.getId(), petID);
     }
 
     // getAdoptedPets

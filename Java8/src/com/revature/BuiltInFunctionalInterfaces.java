@@ -7,6 +7,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class BuiltInFunctionalInterfaces {
+
     public static void main(String[] args) {
         // Consumer - specify the type of value it's going to accept
         Consumer<String> printTwice = (value) -> {

@@ -30,3 +30,29 @@
     - BiConsumer - takes in 2 values, returns nothing
     - BiPredicate - takes in 2 values, returns a boolean
     - BiFunction - takes in 2 values, returns a value
+### Streams
+- Streams help us process data from collections in Java
+- We can perform many operations on a collection with simplified syntax using streams
+- Intermediate Operations - used to manipulate/re-order the collection of data
+  - map -> apply some function to every element in the collection
+  - filter -> filtering out the elements based on some condition
+  - sorted -> sort the elements
+- Terminal Operations - the operations that take place after the intermediate options
+  - collect - take all the return values from the stream and place it some Collection object
+  - forEach - apply some function/operation to each object
+  - reduce - reduce all elements into a single value
+    - sum of the elements, maximum, count
+
+### Method References
+- Shorthand syntax for a lambda expression
+- Use it reference a method and can be integrated well with Funtional Interfaces
+  - Syntax (assuming we have a method called "print" in our "Main" class:
+    ```java
+    numbers.stream().forEach(Main::print);
+    ```
+
+### Optional Class
+- Container Object that may or may not contain a non-null value
+- Useful for situations where we might not have a value (ex: querying from a database)
+- Contains methods to check if the value is there before using the value
+  - This will help to prevent exceptions 
