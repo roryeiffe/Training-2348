@@ -6,6 +6,8 @@ import org.example.data.PetDAO;
 import org.example.data.PetDAOImpl;
 import org.example.entities.Person;
 import org.example.entities.Pet;
+import org.example.exceptions.PetAlreadyAdoptedException;
+import org.example.exceptions.PetNotFoundException;
 import org.example.services.PersonService;
 import org.example.services.PetService;
 import org.example.util.ConnectionFactory;
@@ -65,9 +67,20 @@ public class App {
 
         petService.insert(new Pet("Smeagol", "cat", "cat food"));
 
-        PersonService personService = new PersonService();
-        personService.adopt("Velma", 6);
-        System.out.println(personService.getAdoptedPets("Velma"));
+        try {
+            PersonService personService = new PersonService();
+            personService.adopt("Velma", 6);
+            System.out.println(personService.getAdoptedPets("Velma"));
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        try {
+            System.out.println(petDAO.isAdopted(1));
+            System.out.println(petDAO.isAdopted(2));
+        } catch (PetNotFoundException petNotFoundException) {
+            petNotFoundException.printStackTrace();
+        }
 
 
     }

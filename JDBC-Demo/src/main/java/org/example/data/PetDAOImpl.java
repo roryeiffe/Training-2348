@@ -1,6 +1,7 @@
 package org.example.data;
 
 import org.example.entities.Pet;
+import org.example.exceptions.PetNotFoundException;
 import org.example.util.ConnectionFactory;
 
 import java.sql.*;
@@ -92,6 +93,33 @@ public class PetDAOImpl implements PetDAO{
     }
 
     @Override
+    public boolean isAdopted(int id) throws PetNotFoundException {
+        String sql = "SELECT * FROM pet WHERE id = ?";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+
+            // execute or send the query to the database
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // we can check if a valid result exists in this ResultSet:
+            if(resultSet.next()) {
+                int owner_id = resultSet.getInt("owner_id");
+                if (owner_id == 1) return false;
+                else return true;
+            }
+            else {
+                throw new PetNotFoundException();
+
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        throw new PetNotFoundException();
+    }
+
+    @Override
     public List<Pet> getAll() {
         List<Pet> pets = new ArrayList<>();
 
@@ -124,7 +152,7 @@ public class PetDAOImpl implements PetDAO{
     }
 
     @Override
-    public Pet update(Pet pet) {
+    public Pet update(Pet pet) throws PetNotFoundException, Exception {
         String sql = "UPDATE pet set name=?, species=?, food=? WHERE id=?;";
 
         try {
@@ -141,14 +169,10 @@ public class PetDAOImpl implements PetDAO{
                 return pet;
             }
             else if (count == 0) {
-                // TODO: Setup custom exceptions:
-                System.out.println("No pets were updated.");
-                return null;
+                throw new PetNotFoundException();
             }
             else {
-                // TODO: Setup custom exceptions
-                System.out.println("Multiple rows were updated.");
-                return null;
+                throw new Exception();
             }
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();

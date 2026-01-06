@@ -222,3 +222,68 @@ D - Delete - delete, drop
     - lower - take a single varchar/char and make it lowercase
     - upper - make it uppercase
     - length - return the length of the varchar/char
+
+
+## Joins
+- Lets us combine/join data from multiple tables
+  - Useful when we have foreign key relationships between tables and want to see columns from both tables
+### Different Type of Joins
+- Inner Join
+  - Take records that have matches in both tables
+    - No null values (unless a null value was already in the table)
+  - The following join combines the pet and person table 
+    - "on" condition is checking the owner_id of the pet table against the person id (primary key)
+  ```sql
+  select person.name, pet.name from person join pet on pet.owner_id = person.id order by person.name;
+  ```
+- Left Outer Join
+  - Take all records from the left side plus the matching records on the right side
+    - right side could have null values
+  ```sql
+  select person.name, pet.name
+  from person left outer join pet
+  on pet.owner_id = person.id
+  order by person.name;
+  ```
+- Right Outer Join
+  - Take all records from the right side plus matching records on the left side
+    - left side could have null values
+  ```sql
+  select person.name, pet.name
+  from person right outer join pet
+  on pet.owner_id = person.id
+  order by person.name;
+  ```
+- Full Outer Join
+  - Take all records from both tables and leave null values where there are no matches
+    - There can be null values in both tables:
+  ```sql
+  select person.name, pet.name
+  from person full outer join pet
+  on pet.owner_id = person.id
+  order by person.name;
+  ```
+
+  ### Other Types of Joins
+  - Self Join - table is compared within itself to compare rows
+    - Useful for finding relationships between records or setting up hierarchies
+    - Imagine an employee table that has a column that links to other employee records (manager_id)
+      - Using a self join, we could pair up employees with managers
+      ```SQL
+      select e1.name as employee_name, e2.name as manager_name
+      -- give each table aliases to differentiate between them:
+      from employee e1 join employee e2
+      -- e1 represents the employee and e2 represents the manager, then we're checking e1's manaer id to e2's id
+      on e1.manager_id = e2.id
+      ;
+      ```
+  - Cross Join - returns a cartesian product, every possible combination of rows from the tables
+    - Useful for visualizing data between 2 tables
+    - The results of a cross join will always be the number of rows from the first table multiplied by number of rows from the second
+  ```sql
+  select * from person cross join pet;
+  ```
+
+### Equi vs Theta Join
+  - Theta Join - a join that utilizes a condition to join tables together
+  - Equi Join - a join that utilizes the equals operator ( as opposed to <, >)

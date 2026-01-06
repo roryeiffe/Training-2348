@@ -6,6 +6,9 @@ import org.example.data.PetDAO;
 import org.example.data.PetDAOImpl;
 import org.example.entities.Person;
 import org.example.entities.Pet;
+import org.example.exceptions.PasswordIncorrectException;
+import org.example.exceptions.PetAlreadyAdoptedException;
+import org.example.exceptions.PetNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,18 +27,22 @@ public class PersonService {
         return this.personDAO.insert(person);
     }
 
-    public Person login(String name, String password) {
+    public Person login(String name, String password) throws PasswordIncorrectException {
         Person personDB = this.personDAO.getByName(name);
 
         if (personDB.getPassword().equals(password)) {
             return personDB;
         }
-        // TODO set up some exceptions
-        return null;
+        else {
+            throw new PasswordIncorrectException();
+        }
     }
 
     // adopt
-    public boolean adopt(String personName, int petID) {
+    public boolean adopt(String personName, int petID) throws PetNotFoundException, PetAlreadyAdoptedException {
+        if (petDAO.isAdopted(petID)) {
+            throw new PetAlreadyAdoptedException();
+        }
         Person person = personDAO.getByName(personName);
         if (person == null) {
             System.out.println("Person's name is invalid.");

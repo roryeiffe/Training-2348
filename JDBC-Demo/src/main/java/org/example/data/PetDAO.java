@@ -1,6 +1,7 @@
 package org.example.data;
 
 import org.example.entities.Pet;
+import org.example.exceptions.PetNotFoundException;
 
 import java.util.List;
 
@@ -14,10 +15,13 @@ public interface PetDAO {
     public List<Pet> getAll();
 
     // UPDATE
-    public Pet update(Pet pet);
+    public Pet update(Pet pet) throws PetNotFoundException, Exception;
 
     // DELETE:
     public boolean delete(int id);
+
+    // Check if pet is adopted:
+    public boolean isAdopted(int id) throws PetNotFoundException;
 
     // Adopt a pet (associate a pet record with a person's record using the foreign key)
     public boolean adopt(int personId, int petId);

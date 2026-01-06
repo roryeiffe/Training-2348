@@ -3,6 +3,7 @@ package org.example.services;
 import org.example.data.PetDAO;
 import org.example.data.PetDAOImpl;
 import org.example.entities.Pet;
+import org.example.exceptions.PetNotFoundException;
 
 import java.util.List;
 
@@ -21,15 +22,17 @@ public class PetService {
         return this.petDAO.insert(pet);
     }
 
-    public Pet getById(int id) {
-        return this.petDAO.getById(id);
+    public Pet getById(int id) throws PetNotFoundException {
+        Pet pet = this.petDAO.getById(id);
+        if (pet == null) throw new PetNotFoundException();
+        else return pet;
     }
 
     public List<Pet> getAll() {
         return this.petDAO.getAll();
     }
 
-    public Pet update(Pet pet) {
+    public Pet update(Pet pet) throws PetNotFoundException, Exception{
         return this.petDAO.update(pet);
     }
 
