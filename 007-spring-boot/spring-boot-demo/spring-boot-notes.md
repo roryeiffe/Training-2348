@@ -40,3 +40,24 @@
     - H2 - a way to test database operations without having to set up a database
       - In memory
       - Easier to setup
+### Stereotypes
+- @Component - if we place this over a class, that class will be treated as a bean, and can be managed by spring
+- Stereotypes are annotations that include the basic functionality of @Component but also provide information on the class:
+  - @Repository - tells Spring that a bean should be created based on the repository and tells us that the class is a repository
+  - @Service - same thing but used for Service classes
+  - @Controller - used to mark controllers
+- We could use @Component for all of these, but it's best to be specific and use the correct stereotype
+
+## Spring Boot Project
+
+### Spring Data
+- When setting up our entities, we can use annotations (not spring-specific, but related to the Java persistence API) to map classes to tables and fields to columns
+- entity - placed over a class, maps that class to a table (can specify name of table)
+- column - placed over a field, maps field to a column in the table (can specify name, constraints)
+- Id - placed over a field, indicates that this field is the primary key of the table
+- GeneratedValue - lets us configure the auto-generation of values for this column (like serial type)
+
+#### Repositories
+- For each entity we have, we will usually create a Repository for the entity
+- Interface, so we only have to define the method signatures
+- Repository interfaces that we make will extend from JpaRepository which includes (either in the interface itself or interfaces that it extends from) a lot of standard data-related methods (Create, Read, Update, Delete)
