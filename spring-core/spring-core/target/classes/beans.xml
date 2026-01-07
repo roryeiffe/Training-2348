@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id = "helloWorld" class = "org.example.entities.HelloWorld">
+        <property name="message" value = "hello world"/>
+    </bean>
+
+<!--    Property-Based Injection:-->
+<!--    Make sure the class has a no-args constructor defined and setters for -->
+<!--    all properties-->
+    <bean id = "helloWorld2" class = "org.example.entities.HelloWorld">
+        <property name="message">
+            <value>Hi world</value>
+        </property>
+    </bean>
+
+<!--    Constructor-Based Injection:-->
+<!--    Must have a constructor defined with all parameters:-->
+    <bean id = "pokemon1" class = "org.example.entities.Pokemon">
+        <constructor-arg index = "0" value = "Pikachu"/>
+        <constructor-arg index = "1" value = "Pika"/>
+        <constructor-arg index = "2" value = "Electric"/>
+        <constructor-arg index = "3" value = "Mouse"/>
+        <constructor-arg index = "4" value = "15"/>
+    </bean>
+
+<!--    Account object:-->
+    <bean id = "account1" class="org.example.entities.Account">
+        <property name="id" value = "1"/>
+        <property name = "name" value = "Harry Potter"/>
+        <property name="password" value = "lovehedwig"/>
+    </bean>
+
+    In order to annotation-based configuration to work, we need to enable it:
+    <context:annotation-config />
+
+
+
+
+</beans>

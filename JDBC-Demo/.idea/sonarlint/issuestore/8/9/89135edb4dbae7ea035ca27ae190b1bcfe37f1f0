@@ -1,0 +1,27 @@
+
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Çµí‘8‹»°¹3
+O
+java:S1481"-Remove this unused "personId" local variable.(†ú¼ışÿÿÿÿ8„Ã¬¹3
+>	java:S131$""Add a default case to this switch.(¨ÕÉ8†Ã¬¹3
+L	java:S106&"+Replace this use of System.out by a logger.(˜èÛ£úÿÿÿÿ8†Ã¬¹3
+L	java:S106("+Replace this use of System.out by a logger.(§øÒÏüÿÿÿÿ8†Ã¬¹3
+L	java:S106."+Replace this use of System.out by a logger.(˜èÛ£úÿÿÿÿ8‡Ã¬¹3
+L	java:S1060"+Replace this use of System.out by a logger.(§øÒÏüÿÿÿÿ8‡Ã¬¹3
+L	java:S1064"+Replace this use of System.out by a logger.(ƒÕ¥Şıÿÿÿÿ8ˆÃ¬¹3
+G	java:S1066"+Replace this use of System.out by a logger.(ùñèÈ8ˆÃ¬¹3
+L	java:S106;"+Replace this use of System.out by a logger.(‹–¢«üÿÿÿÿ8ˆÃ¬¹3
+G	java:S106>"+Replace this use of System.out by a logger.(¬Ú£“8‰Ã¬¹3
+G	java:S106@"+Replace this use of System.out by a logger.(©™„Ö8‰Ã¬¹3
+L	java:S106B"+Replace this use of System.out by a logger.(øùºùÿÿÿÿ8‰Ã¬¹3
+G	java:S106F"+Replace this use of System.out by a logger.(²ğÌ8ŠÃ¬¹3
+L	java:S106H"+Replace this use of System.out by a logger.(·­Öüùÿÿÿÿ8ŠÃ¬¹3
+G	java:S106J"+Replace this use of System.out by a logger.(àÕÊæ8ŠÃ¬¹3
+G	java:S106O"+Replace this use of System.out by a logger.(µ˜ã»8ŠÃ¬¹3
+G	java:S106T"+Replace this use of System.out by a logger.(»¶´İ8ŠÃ¬¹3
+G	java:S106b"+Replace this use of System.out by a logger.(ØÀ±8Å³®¹3
+L	java:S106c"+Replace this use of System.out by a logger.(şï›ıùÿÿÿÿ8Ş’±¹3
+L	java:S106d"+Replace this use of System.out by a logger.(ĞŠÍúıÿÿÿÿ8ôå±¹3
+G	java:S106e"+Replace this use of System.out by a logger.(‰ø‘í8”Û³¹3
+L	java:S106f"+Replace this use of System.out by a logger.(¦¯Øşÿÿÿÿ8Ì£µ¹3
+F	java:S106g"+Replace this use of System.out by a logger.(¦ä²:8–¹»¹3

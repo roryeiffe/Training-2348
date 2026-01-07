@@ -1,0 +1,36 @@
+
+b	java:S112¯"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe8¾Ğù¥¹3
+d
+java:S1192M"HDefine a constant instead of duplicating this literal "species" 3 times.(×€¾8¿Ğù¥¹3
+m	java:S117l"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï¤Äó8ÀĞù¥¹3
+w
+java:S1488Q"[Immediately return this expression instead of assigning it to the temporary variable "pet".(úŸ°I8ÁĞù¥¹3
+j
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8ãĞù¥¹3
+q
+java:S2095A"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ãĞù¥¹3
+r
+java:S2095¼"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ãĞù¥¹3
+l
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(­µøÚ8ãĞù¥¹3
+r
+java:S2095ø"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ãĞù¥¹3
+r
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ãĞù¥¹3
+r
+java:S2095Ò"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ãĞù¥¹3
+q
+java:S2095d"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ãĞù¥¹3
+r
+java:S2095Ÿ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8ãĞù¥¹3
+G	java:S106U"+Replace this use of System.out by a logger.(ªÓ“8ëĞù¥¹3
+^
+java:S1126m"AReplace this if-then-else statement by a single return statement.(Õì†¡8íĞù¥¹3
+I
+java:S1168•"+Return an empty collection instead of null.(¥¹ï8ïĞù¥¹3
+ª
+java:S1130›"†Remove the declaration of thrown exception 'org.example.exceptions.PetNotFoundException' which is a subclass of 'java.lang.Exception'.(Õ²¨Ìøÿÿÿÿ8ğĞù¥¹3
+^
+java:S1126Á"AReplace this if-then-else statement by a single return statement.(ŠÅ§l8óĞù¥¹3
+Y	java:S125æ"<This block of commented-out lines of code should be removed.(úòü8ôĞù¥¹3
+M	java:S106ÿ"+Replace this use of System.out by a logger.(„ÀØàÿÿÿÿÿ8õĞù¥¹3

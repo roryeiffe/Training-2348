@@ -1,0 +1,14 @@
+
+Y
+java:S1854"=Remove this useless assignment to local variable "personDAO".(˜Ï×f8…«¥¹3
+J
+java:S1481".Remove this unused "personDAO" local variable.(˜Ï×f8‡«¥¹3
+X	java:S125"<This block of commented-out lines of code should be removed.(Ÿ˜°º8ˆ«¥¹3
+X	java:S1258"<This block of commented-out lines of code should be removed.(öŞ–€8ˆ«¥¹3
+G	java:S106I"+Replace this use of System.out by a logger.(¼åœõ8Š«¥¹3
+G	java:S106O"+Replace this use of System.out by a logger.(ó„¿ƒ8Š«¥¹3
+L	java:S106P"+Replace this use of System.out by a logger.(ª½şşÿÿÿÿÿ8Š«¥¹3
+U
+java:S1128"8Remove this unused import 'org.example.entities.Person'.(‰‰ö™8‹«¥¹3
+p
+java:S1128	"NRemove this unused import 'org.example.exceptions.PetAlreadyAdoptedException'.(¨È‹ùÿÿÿÿ8÷à¥¹3

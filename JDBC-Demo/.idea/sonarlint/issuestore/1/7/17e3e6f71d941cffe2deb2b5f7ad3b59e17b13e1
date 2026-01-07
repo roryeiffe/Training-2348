@@ -1,0 +1,4 @@
+
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ïŸÄ‹8Øì¹3
+¤
+java:S1130"†Remove the declaration of thrown exception 'org.example.exceptions.PetNotFoundException' which is a subclass of 'java.lang.Exception'.(ïŸÄ‹8Ûì¹3

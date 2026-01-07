@@ -1,0 +1,7 @@
+
+{
+java:S1488;"^Immediately return this expression instead of assigning it to the temporary variable "person".(ğîÄ8Èì‘ü¸3
+q
+java:S20952"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(½¨“Ğúÿÿÿÿ8Õ„ü¸3
+l
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(­µøÚ8Õ„ü¸3

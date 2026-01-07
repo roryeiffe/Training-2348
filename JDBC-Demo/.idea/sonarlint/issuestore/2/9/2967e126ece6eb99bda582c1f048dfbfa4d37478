@@ -1,0 +1,31 @@
+
+m
+java:S1192("KDefine a constant instead of duplicating this literal "Pet id => " 3 times.(ıÂ¬¿ÿÿÿÿÿ8„×ô¹3
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Çµí‘8£Øô¹3
+L	java:S106"+Replace this use of System.out by a logger.(˜èÛ£úÿÿÿÿ8ªÍç¹3
+F	java:S106 "+Replace this use of System.out by a logger.(»ÿ§/8«Íç¹3
+G	java:S106""+Replace this use of System.out by a logger.(ÁÔÓ¬8«Íç¹3
+L	java:S106%"+Replace this use of System.out by a logger.(ğ¼¿úÿÿÿÿ8¬Íç¹3
+L	java:S106("+Replace this use of System.out by a logger.(ıÂ¬¿ÿÿÿÿÿ8¬Íç¹3
+L	java:S106+"+Replace this use of System.out by a logger.(òªêÚùÿÿÿÿ8¬Íç¹3
+L	java:S106-"+Replace this use of System.out by a logger.(¯É²şÿÿÿÿ8­Íç¹3
+G	java:S1063"+Replace this use of System.out by a logger.(»¶´İ8­Íç¹3
+L	java:S1067"+Replace this use of System.out by a logger.(ıÂ¬¿ÿÿÿÿÿ8®Íç¹3
+L	java:S1069"+Replace this use of System.out by a logger.(˜èÛ£úÿÿÿÿ8®Íç¹3
+F	java:S106;"+Replace this use of System.out by a logger.(»ÿ§/8®Íç¹3
+G	java:S106="+Replace this use of System.out by a logger.(ÁÔÓ¬8¯Íç¹3
+G	java:S106B"+Replace this use of System.out by a logger.(ïœ¢–8¯Íç¹3
+G	java:S106D"+Replace this use of System.out by a logger.(Àç€—8¯Íç¹3
+L	java:S106J"+Replace this use of System.out by a logger.(ıÂ¬¿ÿÿÿÿÿ8¯Íç¹3
+F	java:S106M"+Replace this use of System.out by a logger.(­øâ8±Íç¹3
+L	java:S106N"+Replace this use of System.out by a logger.(‚ÊÚ¦øÿÿÿÿ8±Íç¹3
+G	java:S106T"+Replace this use of System.out by a logger.(¢‹Äî8±Íç¹3
+L	java:S106]"+Replace this use of System.out by a logger.(Ä†ó´şÿÿÿÿ8±Íç¹3
+L	java:S106^"+Replace this use of System.out by a logger.(ÜéÛÀùÿÿÿÿ8±Íç¹3
+L	java:S106_"+Replace this use of System.out by a logger.(ùÙ›üÿÿÿÿ8±Íç¹3
+G	java:S106`"+Replace this use of System.out by a logger.(ğ¹ç¯8±Íç¹3
+L	java:S106a"+Replace this use of System.out by a logger.(ƒòŒÂÿÿÿÿÿ8²Íç¹3
+L	java:S106b"+Replace this use of System.out by a logger.(ã¹æıÿÿÿÿ8½Ñè¹3
+L	java:S106c"+Replace this use of System.out by a logger.(ÄïÇÕÿÿÿÿÿ8°Øô¹3
+L	java:S106d"+Replace this use of System.out by a logger.(­–´½øÿÿÿÿ8±Øô¹3

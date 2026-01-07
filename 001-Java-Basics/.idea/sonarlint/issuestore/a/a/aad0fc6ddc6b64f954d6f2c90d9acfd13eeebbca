@@ -1,0 +1,10 @@
+
+f
+java:S1192"JDefine a constant instead of duplicating this literal "Star Wars" 4 times.(²è“18ƒÄÓ¥¹3
+o
+java:S1192"MDefine a constant instead of duplicating this literal "Harry Potter" 4 times.(õ’Ù¬ıÿÿÿÿ8ƒÄÓ¥¹3
+G	java:S106"+Replace this use of System.out by a logger.(ªìçê8‹ÄÓ¥¹3
+L	java:S106"+Replace this use of System.out by a logger.( —¹Åúÿÿÿÿ8ŒÄÓ¥¹3
+t
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'( —¹Åúÿÿÿÿ8ÄÓ¥¹3
+G	java:S106"+Replace this use of System.out by a logger.(ªìçê8©êÓ¥¹3

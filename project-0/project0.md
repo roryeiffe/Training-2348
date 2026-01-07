@@ -30,3 +30,14 @@ We want to see that you can meet deadlines and that you can code. You are expect
 - Reread the specs and making sure you understand them
 - Begin planning entities (ex: user) and fields for each entity
 - Set up the "skeleton"/infrastructure for the command line parsing using dummy functions
+
+
+## The Presentation (1/9/26)
+- Share your screen and share your command line interactions with the application
+  - Showcase all of the user stories
+  - Narrate/explain what's happening
+  - Will want to show off the stored procedure
+- Timeframe: 5-10
+  - Make sure to practice, get used to the flow and make it under the time limit
+- While presenting, please have camera on
+- Feel free to ask questions from other presenters

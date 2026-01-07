@@ -1,0 +1,9 @@
+
+g	java:S112#"FDefine and throw a dedicated exception instead of using a generic one.(Õ²¨Ìøÿÿÿÿ8…Ñì¹3
+O
+java:S1135"2Complete the task associated to this TODO comment.(ê°İØ8Èà«¹3
+©
+java:S1130#"†Remove the declaration of thrown exception 'org.example.exceptions.PetNotFoundException' which is a subclass of 'java.lang.Exception'.(Õ²¨Ìøÿÿÿÿ8¬éå¹3
+
+java:S1130#"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(Õ²¨Ìøÿÿÿÿ8–Ñì¹3
+L	java:S106+"+Replace this use of System.out by a logger.(ñÓÉÉşÿÿÿÿ8Ğà«¹3

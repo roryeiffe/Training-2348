@@ -83,3 +83,9 @@ E
 .src/main/java/org/example/exceptions/Main.java,a\f\afebffd3956e4ff33a14a5a788b9893572203127
 _
 /src/main/java/org/example/collections/Main.java,6\f\6f5d2cf60edb5e780365c3970587d7f3a1cbb096
+k
+;src/main/java/org/example/collections/comparison/Movie.java,6\e\6e30d7a93d50bdb1137247f180a15dfdefc441fd
+j
+:src/main/java/org/example/collections/comparison/Main.java,a\a\aad0fc6ddc6b64f954d6f2c90d9acfd13eeebbca
+y
+Isrc/main/java/org/example/collections/comparison/MovieYearComparator.java,3\f\3f497ba0bb39f7fdd4336e508b5af09d517f0aa4

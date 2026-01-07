@@ -1,0 +1,20 @@
+
+U
+java:S1611"3Remove the parentheses around the "value" parameter(³øæ§ıÿÿÿÿ8Ÿ×Ÿ¢¹3
+L	java:S106"+Replace this use of System.out by a logger.(‚é€Şûÿÿÿÿ8–èü¡¹3
+L	java:S106"+Replace this use of System.out by a logger.(‚é€Şûÿÿÿÿ8˜èü¡¹3
+t
+java:S4276"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(áÌŒúÿÿÿÿ8¤×Ÿ¢¹3
+U
+java:S1611"3Remove the parentheses around the "value" parameter(áÌŒúÿÿÿÿ8¤×Ÿ¢¹3
+L	java:S106"+Replace this use of System.out by a logger.(§à·üÿÿÿÿ8™èü¡¹3
+G	java:S106"+Replace this use of System.out by a logger.(•æÅÂ8¦×Ÿ¢¹3
+x
+java:S4276"VRefactor this code to use the more specialised Functional Interface 'IntUnaryOperator'(‘İŠ÷üÿÿÿÿ8¦×Ÿ¢¹3
+U
+java:S1611"3Remove the parentheses around the "value" parameter(‘İŠ÷üÿÿÿÿ8§×Ÿ¢¹3
+L	java:S106"+Replace this use of System.out by a logger.(è¬µ¨ıÿÿÿÿ8§×Ÿ¢¹3
+L	java:S106"+Replace this use of System.out by a logger.(ü¬ºşøÿÿÿÿ8§×Ÿ¢¹3
+s
+java:S4276"QRefactor this code to use the more specialised Functional Interface 'IntSupplier'(°››–úÿÿÿÿ8¨×Ÿ¢¹3
+G	java:S106""+Replace this use of System.out by a logger.(×–€£8³×Ÿ¢¹3
