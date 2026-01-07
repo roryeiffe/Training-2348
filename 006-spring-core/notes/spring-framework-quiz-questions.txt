@@ -1,0 +1,364 @@
+// Spring Framework - Quiz Questions
+// Best Choice - 31
+// Multiple Choice - 1
+// T/F - 9
+// Total - 41
+
+//GUID: aa39ad2c-17f3-4c4f-a4e0-5371f19ebef1
+::Spring JDBC::
+The primary interface of Spring-JDBC is the
+{
+~Connection
+~Session
+=JdbcTemplate
+~Repository
+}
+
+//GUID: 9221e013-7bce-430f-ae8e-638b5853a8d8
+::Spring JDBC::
+This interface can be implemented to define how result sets can be mapped to objects
+{
+~ResultSetMapper
+=RowMapper
+~QueryMapper
+~JdbcQueryResultSetMapperFactoryBuilder
+}
+
+//GUID: 76a1621d-b905-4f7f-809f-1a4f76e1dd35
+::Spring JDBC::
+Spring-JDBC cannot execute DDL statements 
+{ F #This statement is false. We can use the <code>execute(..)</code> method from JdbcTemplate to execute any SQL statements or DDL statements.}
+
+//GUID: e887822e-8c94-4513-a522-7b41fb83d02c
+::Spring JDBC::
+The following is not a method on the JdbcTemplate interface?
+{
+~execute
+~query
+~queryForObject
+=select
+}
+
+//GUID: 38e75a6a-5623-40ea-a9a1-1bece73d5c1b
+::Spring::
+Spring is
+{
+~A dependency injection framework for JavaScript.
+~A mocking library for Java.
+~A JVM based programming language.
+=A dependency injection framework for Java.
+}
+
+//GUID: b7032ad5-8806-4cd9-8524-fca10b19fb22
+::Spring::
+One of the problems Spring Core addresses is
+{
+=Tight coupling
+~Loose coupling
+~Pagination
+~Session management
+}
+
+//GUID: 826e238f-bbc7-49b2-a262-c956827c5edd
+::Spring::
+A Spring bean is
+{
+~The same as a Java bean.
+=A class which is constructed and managed by Spring.
+~Only classes defined in the Spring source code.
+~Any bean annotated with @GetMapping.
+}
+
+//GUID: 38731216-812f-4b59-af95-09401978047e
+::Spring::
+Which of the following is not a way to get a bean from Spring?
+{
+~Using the getBean method on the ApplicationContext or BeanFactory.
+~Using <code>@Autowire</code> with a valid bean definition.
+~Using an XML configuration with a valid bean reference.
+=Using the <code>@Aspect</code> annotation before the declaration field, setter, or constructor.
+}
+
+//GUID: 825e267a-da31-4da9-9341-23881cd5424b
+::Spring::
+The <code>@Configuration</code> annotation is used to
+{
+~Provide XML configuration.
+=Define a class as a configuration bean.
+~Provide annotation driven configuration.
+~Do the same as the <code>@Autowired</code> annotation.
+}
+
+//GUID: be179d18-0182-4826-b35e-cad0250fd47a
+::Spring::
+Which of the following is not a valid stereotype annotation?
+{
+~<code>@Component</code>
+=<code>@Bean</code>
+~<code>@Controller</code>
+~<code>@Service</code>
+}
+
+//GUID: aaab107f-8a71-47ea-8112-b798953519a0
+::Spring::
+The default autowire value for Spring beans is:
+{
+=no
+~byType
+~byName
+~constructor
+}
+
+//GUID: 9c9873d8-a2b0-4711-ab06-60d31010d845
+::Spring::
+When requesting a bean with the scope 'prototype', you will always be given a new instance of the bean
+{ T }
+
+//GUID: e9fd9c73-da48-4dc1-a690-d526491ee3e4
+::Spring::
+The default scope of a bean is 'singleton'
+{ T }
+
+//GUID: cabd356a-73b3-4a50-b20a-d7d2aa1b7012
+::Spring::
+You can provide configuration to spring using XML, a configuration bean, and annotation-driven configuration.
+{ T }
+
+//GUID: 995b43d1-a0f6-4e61-a73b-a1e26db67683
+::Spring::
+Primitive values and string literals can be injected using which annotation?
+{
+~<code>@Autowired</code>
+~<code>@inject</code>
+=<code>@Value</code>
+~<code>@Configuration</code>
+}
+
+//GUID: e14dcafc-2cd4-4de1-8f65-aa3390205f24
+::Spring::
+ApplicationContext will pre-instantiate beans with the ________ bean scope.{
+	=Singleton
+	~Prototype
+	~Global Session
+	~ApplicationContext never pre-instantiates beans
+}
+
+//GUID: cb231a26-a59d-4ad5-9d35-62ef2fe657ef
+::Spring::
+Select the following correct statement regarding Spring.{
+	~Does not allow for integration into an application at any point in development
+	~Does not allow for transaction management.
+	~Does not provide developers with vast amounts of community supported documentation.
+	~Does not have enough modules to be considered a true framework.
+	=Does not encourage tight coupling.
+}
+
+//GUID: c3417ca5-ac0d-4b0b-b354-e836680d0525
+::Spring::
+Select the incorrect module of Spring{
+	~Core
+	~Beans
+	~Context
+	=Data Source
+}
+
+//GUID: 098b993e-efe2-4380-8f1c-71f2478bad18
+::Spring::
+What are the scopes of a Spring bean?{
+	=Singleton, Prototype, Session, Global Session, Request
+	~Singleton, Prototype, Session, Request
+	~Request, Session, Application, Page
+	~Request, Response, Session, Global Session
+}
+
+
+//GUID: c6f978ea-453d-4353-8dc1-0446183ec891
+::Spring::
+What is meant by autowiring?{
+	~Spring automatically defining the concrete class dependency to be injected
+	=Spring auto-resolves collaborators for your bean by inspecting the contents of the BeanFactory
+	~Spring automatically locates a beans concrete class in the classpath
+	~None of the above
+}
+
+//GUID: 16f8032b-9a38-4ac9-989b-e1f4430d252c
+::Spring::
+What is meant by bean wiring?{
+	~The act of defining the concrete class dependency to be injected
+	=The act of creating associations between beans within the Spring container
+	~The act of naming a bean to locate it in the ApplicationContext
+	~The act of Spring deploying beans to a Web servlet container
+}
+
+//GUID: e8c28080-152d-4755-8151-afe81f30212a
+::Spring::
+What is the Application Context?{
+	~A BeanFactory that does not preinstaniate its singleton beans
+	~The core component of Spring that deploys concrete components to a Servlet container
+	=A BeanFactory with more features, such as text messaging, generic resource loaders, and bean event listeners
+	~All of the above
+}
+
+//GUID: add00018-0605-4fa6-bb5c-e391663256eb
+::Spring::
+What is a Bean Factory?{
+	~A means for resolving text messages, including support for internationalization
+	~A class you define and create in your Spring application that implements the Factory design pattern
+	=Holds Bean Definitions of multiple beans within itself and then instantiates the bean when requested
+	~A Web GUI tool that allows you to access your bean definitions
+}
+
+//GUID: f65e5676-a5e2-4067-bde0-4e10a05caaf0
+::Spring::
+What is JndiFactoryBean?{
+	=Provides an abstraction layer for discovering external resources and can be used to provide a container-managed session factory.
+	~Java Naming and Directory Interface.
+	~A bean used of factory pattern implementation through Spring.
+	~A session factory provided by tomcat.
+}
+
+//GUID: 0ed19027-10b0-4a04-9efb-69a410a80014
+::Spring::
+What is Spring?{
+	~An open source Java persistence framework that performs powerful object relational mapping
+	~An open-standard, XML-based messaging protocol for exchanging information among computers
+	~An open source tool to perform continuous integration and build automation
+	=An open source framework created to address the complexity of enterprise application development
+}
+
+//GUID: 1f4ae345-a6c9-4f38-8fa5-8d5e2d9bca94
+::Spring::
+What is the current core container in Spring?{
+	~BeanFactory
+	=ApplicationContext
+	~WebContext
+	~XMLBeanFactory
+}
+
+//GUID: 64ceedb7-4115-44b6-98a9-808356597342
+::Spring::
+What is the typical Bean life cycle in Spring Bean Factory Container?{
+	=Instantiate, populate properties, setBeanName, setBeanFactory, pre-init PostProcessor, afterPropertiesSet, custom init, post-init PostProcessor, in use, destroy, custom destroy
+	~Instantiate, custom init, populate properties, afterPropertiesSet, setBeanName, setBeanFactory, pre-init PostProcessor, post-init PostProcessor, in use, destroy, custom destroy
+	~Instantiate, populate properties, pre-init PostProcessor, afterPropertiesSet, post-init PostProcessor, in use, destroy
+	~SetBeanName, setBeanFactory, pre-init PostProcessor, instantiate, populate properties, post-init PostProcessor, in use, destroy, custom destroy
+}
+
+//GUID: c73a5033-7d3a-4b61-a8cb-a6d917ccfe3b
+::Spring::
+Which is not a bean scope in Spring Framework?{
+	~Singleton
+	=Factory
+	~Prototype
+	~Session
+}
+
+//GUID: 4d1a7791-38d5-473b-bbdf-893bf42c4e59
+::Spring::
+Which is not one of the common implementations of the Application Context?{
+	~ClassPathXmlApplicationContext
+	~WebXmlApplicationContext
+	~FileSystemXmlApplicationContext
+	=XmlWebApplicationContext
+}
+
+//GUID: 3639cb74-4979-4f25-9ce8-2ee530eeafcd
+::Spring::
+Which transaction propagation strategy creates a new transaction, and suspends the current transaction if one exists?{
+	~REQUIRED
+	=REQUIRES_NEW
+	~SUPPORTS
+	~NOT_SUPPORTED
+	~MANDATORY
+	~NEVER
+}
+
+//GUID: a597466f-a179-4716-a2fb-be2d6afb0a46
+::Spring::
+Which transaction propagation strategy executes non-transactionally, and throws an exception if a transaction exists?{
+	~REQUIRED
+	~REQUIRES_NEW
+	~SUPPORTS
+	~NOT_SUPPORTED
+	~MANDATORY
+	=NEVER
+}
+
+//GUID: 1ca5e8ab-5b5d-4329-ba64-d0e288d28cfe
+::Spring::
+Which transaction propagation strategy executes non-transactionally, and suspends the current transaction if one exists?{
+	~REQUIRED
+	~REQUIRES_NEW
+	~SUPPORTS
+	=NOT_SUPPORTED
+	~MANDATORY
+	~NEVER
+}
+
+//GUID: 4ff00f8c-a25d-4878-9d16-58799e4d9adf
+::Spring::
+Which transaction propagation strategy supports a current transaction, and throws an exception if none exists?{
+	~REQUIRED
+	~REQUIRES_NEW
+	~SUPPORTS
+	~NOT_SUPPORTED
+	=MANDATORY
+	~NEVER
+}
+
+//GUID: 50bce5e1-17e4-4d68-8d4e-f4c2d8d22f8a
+::Spring::
+Which transaction propagation strategy supports a current transaction, and creates a new one if none exists?{
+	=REQUIRED
+	~REQUIRES_NEW
+	~SUPPORTS
+	~NOT_SUPPORTED
+	~MANDATORY
+	~NEVER
+}
+
+//GUID: 4127b827-2775-4c26-8507-907c5391c7fc
+::Spring::
+Which transaction propagation strategy supports a current transaction, and executes non-transactionally if none exists?{
+	~REQUIRED
+	~REQUIRES_NEW
+	=SUPPORTS
+	~NOT_SUPPORTED
+	~MANDATORY
+	~NEVER
+}
+
+//GUID: 7f3bcaee-2d53-4f18-b6ee-e5eb9686de17
+::Spring::
+Why should we use DI (Dependency Injection) over conventional development techniques? Select all that apply.{
+	~%33%It provides for loose coupling.
+	~%33%It allows the container to manage our dependencies.
+	~%34%It allows the developer to utilize Spring's autowiring capabilities.
+	~%-50%Using the Spring DI provider, it tightly couples our application with the Spring framework.
+}
+
+//GUID: b7e55512-3bd0-4ef3-9f35-7cea86848183
+::Spring::
+<code>@Autowired</code> matches first by name and then by type.
+{ F }
+
+//GUID: dbff7bab-aa6c-4727-b6c5-06a96436f25c
+::Spring::
+<code>@Autowired</code> and <code>@Inject</code>  have different execution paths.
+{ F }
+
+//GUID: aaf672bc-5c18-4b8f-96d9-f94a2723dcae
+::Spring::
+Spring is an abstraction of Hibernate.
+{ F }
+
+//GUID: 8c1bd739-6a73-4d3e-b8f2-7dc9c93bb2a8
+::Spring::
+The BeanFactory provides eager instantiation, i18n, and listener capabilities.
+{ F }
+
+//GUID: a2ecda47-ab13-4387-bdaf-3b3b3b1f7659
+::Spring:: 
+We can inject primivite values into our beans and also use expression language to access data from a properties file.
+{ T }
+
