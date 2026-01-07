@@ -61,3 +61,10 @@
 - For each entity we have, we will usually create a Repository for the entity
 - Interface, so we only have to define the method signatures
 - Repository interfaces that we make will extend from JpaRepository which includes (either in the interface itself or interfaces that it extends from) a lot of standard data-related methods (Create, Read, Update, Delete)
+
+
+### Lombok Fix
+- In order for Lombok to work, Annotation Processing needs to be enabled
+  - In IntelliJ, go to File -> Settings
+  - On the sidebar, find Build, Execution, Deployment -> Compiler -> Annotation Processors
+  - Ensure the "Enable annotation processing" box is checked at the top

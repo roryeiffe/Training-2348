@@ -19,7 +19,6 @@ public class PetController {
     // Create POST (POST is the HTTP method used for inserting data)
     @RequestMapping(value = "/pets", method = RequestMethod.POST)
     public Pet insert(@RequestBody Pet pet) {
-        System.out.println(pet.toString());
         return this.petService.insert(pet);
     }
 
