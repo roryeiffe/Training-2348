@@ -48,6 +48,12 @@
   - @Controller - used to mark controllers
 - We could use @Component for all of these, but it's best to be specific and use the correct stereotype
 
+### Spring Boot Devtools
+- It is a dependency that once you place in pom.xml, makes the Spring Boot application restart whenever we make changes to the source code
+- In IntelliJ -> File -> Settings -> Compiler
+  - Make sure "Build Project Automatically" is checked
+
+
 ## Spring Boot Project
 
 ### Spring Data
@@ -62,9 +68,33 @@
 - Interface, so we only have to define the method signatures
 - Repository interfaces that we make will extend from JpaRepository which includes (either in the interface itself or interfaces that it extends from) a lot of standard data-related methods (Create, Read, Update, Delete)
 
+#### Derived Queries
+- In our repositories, we can add method declarations that perform actions based on their name
+- ex: findByName(String name) -> will find all records whose name field matches the parameter
+- [Reference for more types of Derived Queries](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html)
+
+#### Custom Queries
+- We can write queries in native SQL language
+- Especially useful for complex queries that might not be fulfilled by the derived queries
+- We just place @Query over the method declaration in the Repository interface
+
+
+### Spring web
+
+#### ResponseEntity
+- The ResponseEntity class can be used to "wrap" around the entity that we're sending back
+  - Allows us to specify the status code (200 for success, 400s for client-side error, 500s for server-side error)
+- It is best practice to return responseEntity objects as opposed to the entity itself
+
 
 ### Lombok Fix
 - In order for Lombok to work, Annotation Processing needs to be enabled
   - In IntelliJ, go to File -> Settings
   - On the sidebar, find Build, Execution, Deployment -> Compiler -> Annotation Processors
   - Ensure the "Enable annotation processing" box is checked at the top
+
+### H2 Database
+- In-memory database
+  - Easier to set up, we just include the dependency and Spring Boot configures the H2 database for us
+  - We lose the "permanent" aspect of databases so h2 databases should be used for testing and development
+- We can also configure certain properties of the h2 database in the application.properties file

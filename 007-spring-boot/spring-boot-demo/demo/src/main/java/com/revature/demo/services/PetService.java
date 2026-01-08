@@ -1,6 +1,7 @@
 package com.revature.demo.services;
 
 import com.revature.demo.entities.Pet;
+import com.revature.demo.exceptions.PetNotFoundException;
 import com.revature.demo.repositories.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,14 +29,31 @@ public class PetService {
         return this.petRepository.save(pet);
     }
 
-    public Pet getById(Long id) {
+    public Pet getById(Long id) throws PetNotFoundException {
         Optional<Pet> petOptional = petRepository.findById(id);
         if(petOptional.isPresent()) return petOptional.get();
-        // TODO: Exception
-        else return null;
+        else throw new PetNotFoundException();
     }
 
     public List<Pet> getAll() {
         return this.petRepository.findAll();
     }
+
+    public Pet update(Pet pet) throws PetNotFoundException {
+        // check if the pet exists before updating:
+        if (!this.petRepository.existsById(pet.getId())) {
+            throw new PetNotFoundException();
+        }
+       pet = this.petRepository.save(pet);
+       return pet;
+    }
+
+    public void delete(Long id) throws PetNotFoundException {
+        // check if the pet exists before updating:
+        if (!this.petRepository.existsById(id)) {
+            throw new PetNotFoundException();
+        }
+        this.petRepository.deleteById(id);
+    }
+
 }
