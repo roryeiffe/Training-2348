@@ -3,10 +3,12 @@ package com.revature.demo.controllers;
 import com.revature.demo.entities.Pet;
 import com.revature.demo.exceptions.PetNotFoundException;
 import com.revature.demo.services.PetService;
+import com.revature.demo.validators.PetValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.DataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +29,20 @@ public class PetController {
     // We use the @RequestBody annotation to map the request body from the request
     // to the parameter of this method
     public ResponseEntity<Pet> insert(@RequestBody Pet pet) {
+        // Validate pet before inserting:
+        // create a dataBinder
+        DataBinder dataBinder = new DataBinder(pet);
+        // set the validator to the one we created:
+        dataBinder.setValidator(new PetValidator());
+        // perform the validation itself, after which we can view the results:
+        dataBinder.validate();
+        System.out.println(dataBinder.getBindingResult());
+        if(dataBinder.getBindingResult().hasErrors()) {
+            System.out.println("Some errors with the pet");
+            return new ResponseEntity<>(new Pet(), HttpStatus.BAD_REQUEST);
+        }
+
+
         pet = this.petService.insert(pet);
         // construct a response entity, configure the entity to be sent and the
         // status code

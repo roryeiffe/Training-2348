@@ -78,6 +78,37 @@
 - Especially useful for complex queries that might not be fulfilled by the derived queries
 - We just place @Query over the method declaration in the Repository interface
 
+#### Spring Boot Actuator
+- Dependency that we can add to our project that provides us access to certain metrics about our project
+- Once the dependency is added and the project is running, we can access those metrics by going to 
+  - localhost:8081/actuator/metric
+  - ex: localhost:8081/actuator/health - general health information 
+  - /beans - shows the beans that are in use for the application
+- Configure which endpoints are available in our application.properties
+  - management.endpoints.web.exposure.include=beans,health
+- We want to include the following dependency:
+```
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+
+#### Spring Environments
+- As we've seen, we can configure certain aspects of our environment using the application.properties file
+  - server.port=8081
+  - Configuring information about our h2 database, enabling console, setting the credentials
+  - Specifying which endpoints are available for Spring Boot Actuator
+- Some of these might change depending on the context (test, development, production)
+- To set up different scenarios, we can set up multiple properties files and configure Spring Boot to a specific one
+- These properties files should go in the resources folder
+- We can utilize this for the next project in case different environment needs
+
+#### RestTemplate
+- Representational State Transfer
+- RestTemplate allows us to consume external web services from within our Spring project
+- Not super applicable right now and for project 1 because we don't have a need to access another webservice/API
+- It will definitely come in handy when we reach Microservices where our services will need to interact with each other
 
 ### Spring web
 
@@ -98,3 +129,39 @@
   - Easier to set up, we just include the dependency and Spring Boot configures the H2 database for us
   - We lose the "permanent" aspect of databases so h2 databases should be used for testing and development
 - We can also configure certain properties of the h2 database in the application.properties file
+
+
+### Handling Transactions in a Spring Boot Application
+- Transactions let us group multiple SQL/database commands together so that if a failure occurs, the changes are rolled back
+- ACID
+- We will make use of @Transactional annotation which is placed over a method to ensure that those operations are executed within a transaction
+  - Which class's methods are we going to annotating with @Transactional
+    - DAO - DAO/repository methods typically include one operation
+    - Service
+      - the service layer is the layer that calls the Repository methods, meaning that multiple database operations could exist within a single service method
+    - Controller
+- Some of the properties we can define within a transactional annotation
+  - readOnly - specifies that this transaction is only reading data as opposed to writing
+  - isolation - specifies that the type of data that is allowed to be read (committed vs uncommitted)
+    - Useful to specify so we aren't reading uncommitted data that could be rolled back
+  - propagation - defines the behavior of whether or not we need a transaction, or to create a new one, or to use an existing one
+    - If we have multiple methods that use transactions, we can configure them how we want
+
+
+### Validation
+- Spring provides us some annotations and utilities for validating data
+- pom.xml dependency:
+```
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+```
+- Annotations
+  - @NotEmpty - guaranteeing that the value is not empty
+  - @Max()
+  - @Min()
+  - @Email - ensures a string fits the patterno of an email
+  - Read more about them here: https://medium.com/@himani.prasad016/validations-in-spring-boot-e9948aa6286b 
+- If the built-in annotations don't meet our validation requirements, we can create a validator with custom rules/logic

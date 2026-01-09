@@ -2,6 +2,7 @@ package com.revature.demo.entities;
 
 import jakarta.persistence.*;
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,10 +17,14 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id") // specify that this field is mapped to a column in the table:
     private Long id;
+
+    @NotEmpty
     @Column(name = "pet_name")
     private String name;
+    @NotEmpty
     @Column(name = "species")
     private String species;
+    @NotEmpty
     @Column(name = "food")
     private String food;
 
