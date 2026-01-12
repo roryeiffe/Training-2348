@@ -1,7 +1,7 @@
 # Project One
-For Project One, you are required to build a full-stack application that satisfies the requirements set forth in the Expense Reimbursement Management System document. Your ERMS must abide by following:
+For Project One, you are required to build a full-stack application that satisfies the requirements set forth below. Your ERMS must abide by following:
 
-This project will be presented on 1/23/26
+
 
 ## Technology
 
@@ -10,7 +10,7 @@ This project will be presented on 1/23/26
 * Front-End Built with TypeScript React
 
 
-You will have 10 minutes to demo this to me and the rest of the cohort.
+You will have 10 minutes to demo this to me and the rest of the cohort. This project will be presented on 1/23/26.
 
 
 #### User Stories
