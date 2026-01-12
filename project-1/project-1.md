@@ -35,4 +35,13 @@ You will have 10 minutes to demo this to me and the rest of the cohort.
 - One repo per team
 
 ### Stretch Goals
-- 
+- Monthly Budget - Come up with a monthly limit for employees. Any requests that are submitted which would surpass a given employee's monthly limit are flagged in some way so managers are aware when going in to approve/deny. 
+- Expense Categories - Pre-defined categories such as food, travel, etc. Upon selecting a category, fields are auto-populated with default values which the employees can modify as they please before submitting the expense request. 
+- Profile Information - Employees can navigate to a Profile Page on the website and edit personal information like address, phone number, profile picture, etc.
+- Ticket Status History - Track the individual actions taken on tickets (submitted, approved, denied, etc.). Store these events in a history table and allow the manager to view these on the front-end. Each entry in the table should include
+  - EmployeeId
+  - Amount
+  - Action Taken (Created, Approved, Denied)
+  - ManagerId (if there is a manager associated with this action)
+  - Any other information that might be relevant
+- Ticket Comments - Require managers to include a comment when approving or denying. Employees can respond to these comments and request to re-open the ticket (only once per ticket). 
