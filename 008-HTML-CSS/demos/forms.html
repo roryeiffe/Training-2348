@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+</head>
+<body>
+
+  <form>
+    <label for = "username">Username</label>
+    <input placeholder="rory123" id = "username" required type = "text" name = "username" />
+    <br />
+    <label for = "password">Password</label>
+    <input type="password" id="password" required/>
+
+    <br />
+    <label for ="biography">Bio:</label>
+    <textarea id = "biography" placeholder = "Hi, my name is..." rows="8" cols="50"></textarea>
+  
+    <h2>Pick Hogwarts House</h2>
+    <label for = "gryf">Gryffindor</label>
+    <input checked id = "gryf" type="radio" name="house" value="Gryffindor" />
+    <br />
+    <label for = "huff">Hufflepuff</label>
+    <input id = "huff" type="radio" name="house" value="Hufflepuff" />
+    <br />
+    <label for = "rave">Ravenclaw</label>
+    <input id = "rave" type="radio" name="house" value="Ravenclaw" />
+    <br />
+    <label for = "slyth">Slytherin</label>
+    <input id = "slyth" type="radio" name="house" value="Slytherin" />
+
+    <h2>Select what spells you know</h2>
+    <label for = "wl">Wingardium Leviosa</label>
+    <input type="checkbox" id = "wl" name = "wl" value = "Wingardium Leviosa"/>
+    <label for="stup">Stupefy</label>
+    <input type="checkbox" id = "stup" name = "st" value = "Stupefy"/>
+    <label for = "avada">Avada Kadavra</label>
+    <input type="checkbox" id = "avada" name = "avada" value = "Avada Kadavra"/>
+
+
+    <h2>Choose your pet:</h2>
+    <select name = "pet" id = "pet">
+      <option value = "owl">Owl</option>
+      <option value = "cat">Cat</option>
+      <option value = "toad">Toad</option>
+
+    </select>
+
+    <button>Submit</button>
+  </form>
+  
+</body>
+</html>

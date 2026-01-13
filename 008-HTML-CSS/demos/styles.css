@@ -1,0 +1,18 @@
+:root {
+  
+  --main-text-color: #406daf;
+
+}
+
+p {
+  color: var(--main-text-color)
+}
+
+h3 {
+  color: var(--main-text-color)
+}
+
+h1 {
+  color: var(--main-text-color)
+}
+

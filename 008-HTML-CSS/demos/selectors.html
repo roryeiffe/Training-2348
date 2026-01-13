@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      text-transform: lowercase;
+    }
+
+    p {
+      color: purple;
+    }
+
+    /* Element Selector: */
+    h2 {
+      color: red;
+    }
+
+    /* Class Selector:  */
+    .class1 {
+      color: green;
+    }
+
+    /* Id Selector:  */
+    #header3 {
+      color: blue;
+    }
+
+    /* To target multiple elements, separate by comma:  */
+    p, h2 {
+      text-decoration: underline;
+    }
+
+    /* Target all p tags that are descendants of div (direct or indirect/nested) */
+    div p {
+      color:brown;
+    }
+    
+    /* Target all p tags that are direct descendant of div */
+    div > p {
+      color: aqua;
+    }
+
+    /* Target p tags that exist on the same level as divs: */
+    div ~ p {
+      color: orange;
+    }
+
+    /* Target p tags that are directly adjacent to divs: */
+    div + p {
+      color: lime;
+    }
+
+    div:hover {
+      color: grey;
+      background-color: aquamarine;
+    }
+
+    p::first-letter {
+      text-transform: capitalize;
+      color: cyan;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Welcome to styling</h1>
+
+  <p>paragraph</p>
+
+  <p>paragraph</p>
+
+  <h2>Header 1</h2>
+  <h2 class = "class1">Header 2</h2>
+  <h2 class = "class1" id = "header3">Header 3</h2>
+
+  <div>
+    <p>This is a paragraph inside of a div (direct child)</p>
+    <span>
+      <p>This is a paragraph inside of a span, inside of a div</p>
+    </span>
+  </div>
+
+  <p>This is immediately adjacent to a div</p>
+  <p>This is a sibling of div</p>
+
+  <div>Hover Over Me</div>
+
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus saepe sed exercitationem architecto voluptatum ullam, autem inventore fugit quam sunt error distinctio nisi voluptates enim recusandae eius iusto sit corporis?</p>
+  
+</body>
+</html>
