@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    let numbers = [3,21,5,1,2, 6];
+
+    // filter takes in an arrow function that returns a boolean
+    // used to determine which values are to be kept
+    let evens = numbers.filter(x => x%2 == 0);
+
+    console.log(evens);
+
+    // The following map function returns an expression (single line)
+    let squares = numbers.map(number => number*number)
+
+    console.log(squares);
+
+    // If we include curly braces, we can include a multi-line
+    // arrow function:
+    let incremented = numbers.map(number => {
+        // whatever logic we put in here will be applied to every element
+        // of the array:
+        // console.log(number);
+        // console.log(number + 1);
+        return number + 1;
+    })
+
+    console.log(incremented);
+
+    let sorted = numbers.sort((num1, num2) => num1 - num2);
+    console.log(sorted);
+
+    let people = [
+      {
+        name: "El",
+        age: 11
+      },
+      {
+        name: "Mike",
+        age: 12
+      },
+      {
+        name: "Dustin",
+        age: 10
+      },
+      {
+        name: "Lucas",
+        age: 13
+      },
+      {
+        name: "Max",
+        age: 13
+      },
+      {
+        name: "Will",
+        age: 10
+      }
+    ]
+
+    let sorted_people = people.sort((person1, person2) => person1.age - person2.age)
+    console.log(sorted_people);
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

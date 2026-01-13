@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // set up a default parameter to use if a value isn't passed in
+    function say_hello(name="Unknown") {
+      console.log("Hello " + name);
+      return "Hello " + name;
+    }
+
+    // this will use "rory" because it was passed in explicitly
+    say_hello("rory");
+    // if we don't pass in a variable, it will resort to the value
+    say_hello();
+  
+
+  </script>
+</body>
+</html>

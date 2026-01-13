@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // this would be globally scoped, not in any of the blocks
+    var x = 5;
+    let y = 6;
+    const z = 7;
+
+
+    function print(message) {
+      console.log(message);
+      // any variables defined within a function cannot be used
+      // outside of the function:
+      var insideFunctionVar = 1;
+      let insideFunctionLet = 2;
+      const insideFunctionConst = 3;
+    }
+
+    // console.log(insideFunctionVar)
+    // console.log(insideFunctionLet)
+    // console.log(insideFunctionConst)
+
+    for (let i = 0; i < 10; i ++) {
+      var insideBlockVar = 0;
+      let insideBlockLet = 1;
+      const insideBlockConst = 2;
+    }
+
+    // variables defined with var do not go out of scope when we leave
+    // the block
+    console.log(insideBlockVar);
+    console.log(insideBlockLet);
+    console.log(insideBlockConst);
+
+  </script>
+  
+</body>
+</html>
