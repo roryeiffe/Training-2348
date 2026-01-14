@@ -77,3 +77,107 @@ let name = "Mike";
 console.log("Hello " + name)
 console.log(`Hello ${name}`)
 ```
+
+### Classes and OOP
+- JS allows us to create classes as of ES6
+  - Conceptually similar to Java where we define the class/structure we want to create
+- Inheritance
+- Normally, we saw we could create objects using JS notation
+```js
+{
+  field: value,
+  field: {
+    nestedField: value
+  }
+}
+```
+- this keyword - work similar to Java, lets us access instance properties
+With classes:
+```js
+class Animal {
+    constructor(name, legs) {
+        // this keyword means that we're referring to the object that called this method rather than any other object
+        this.name = name;
+        this.legs = legs;
+    }
+
+    speak() {
+        console.log("This animal is speaking.");
+    }
+}
+let animal = new Animal("Smeagol", 4);
+```
+
+### Error Handling
+- When errors are thrown in JS, we want to be able to catch them and perform some behavior
+- We can use try/catch blocks
+```js 
+try {
+  // potentially error-filled code
+} catch(error) {
+  // whatever you want to happen when the error is caught
+}
+```
+- In addition to console.log, we can use console.error if we want to print an error message
+
+## Truthy and Falsey Values
+- A lot of values in JS, even if they're not booleans, can be evaluated as true/false
+- If a value is truthy, it will be evaluated as true (ex: in an if statement)
+  - Falsey values are the opposite
+- The falsey values in JS
+  - null
+  - undefined
+  - ""
+  - false
+  - 0
+  - NaN
+- Note that the empty object {} is truthy
+
+## Spread/Rest Operators
+- Similar functionality but used in different contexts
+- Both are related to the "unraveling" an object/array
+- spread - take an array/object and "spread out" the elements
+- a = [1,2,3]
+  - ...a -> 1,2,3
+- rest - take N parameters in a function, store them as an array to be used within the function
+  - This should be the last argument and should only be only 1
+
+
+## Hoisting
+- Imagine we have a script in an HTML page 
+- We declare a variable with var
+- For one reason or another, we try to use the variable before it is defined
+```html
+<script>
+  x = "cat";
+  console.log(x);
+  var x;
+</script>
+```
+- variables declared with var will be hoisted to the top to avoid issues like this
+
+## Strict Mode
+- With strict mode enabled, we will be warned if we do certain things in our code that would normally be ignored:
+  - access a variable declared with var before it was declared
+  - using reserved words as variable names
+  - duplicate property/param names
+  - assigning values to read-only properties
+  - delete an undeleteable property
+- To enable strict mode, we can include the following line:
+```html
+<script>
+'use strict';
+</script>
+```
+
+## ES6
+- EcmaScript 6
+- 2015
+- Introduced a lot of new features to JS
+  - let,const keywords
+  - classes
+  - default parameters
+  - arrow functions
+  - spread and rest operators
+  - template literals
+  - for of loop - handy way to iterate through an array of items

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id = "div1">
+
+  </div>
+
+  <h1>Hello</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+
+  <script>
+    // create a new element
+    let pElement = document.createElement("p");
+    pElement.innerText = "This is some text created by JS DOM Manip"
+    pElement.setAttribute("id", "p1");
+    console.log(pElement);
+
+    // the following 2 lines achieve the same thing:
+    let divElement = document.getElementById("div1");
+    divElement = document.querySelector("#div1");
+    console.log(divElement);
+
+    // add p to the div's children
+    divElement.appendChild(pElement);
+    // divElement.removeChild(pElement);
+    pElement.remove();
+
+    divElement.innerHTML = "<p>Some p text</p>"
+
+    // retrieve all h1s from the page:
+    let h1s = document.getElementsByTagName("h1");
+
+    console.log(h1s);
+
+    // loop through h1s and assign a class value for each
+    for(const h1 of h1s) {
+      h1.setAttribute("class", "header");
+    }
+
+    console.log(typeof pElement);
+    console.log(typeof h1s);
+
+
+
+  </script>
+  
+</body>
+</html>

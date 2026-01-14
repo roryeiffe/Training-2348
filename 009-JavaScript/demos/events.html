@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <button id = "button1">Click Me</button>
+  <button id = "button2">Make it blue</button>
+
+  <div id = "div1">
+
+  </div>
+
+  <p>This is here before the button is clicked</p>
+
+  <script>
+    function buttonClick() {
+      console.log("Button was clicked!");
+      alert("The button was clicked!");
+      let pElement = document.createElement("p");
+      pElement.innerText = "Button was clicked";
+      let divElement = document.getElementById("div1");
+      console.log(divElement);
+      divElement.appendChild(pElement);
+    }
+    function changeColor() {
+      let ps = document.getElementsByTagName('p');
+      for(const p of ps) {
+        p.setAttribute("class", "blue")
+      }
+
+      
+    }
+
+    let buttonElement = document.getElementById("button1");
+    let buttonElement2 = document.getElementById("button2");
+
+    // set up an event listener to trigger the function when the button is clicked:
+    buttonElement.addEventListener("click", buttonClick);
+    buttonElement2.addEventListener("click", changeColor);
+
+    
+
+
+
+
+  </script>
+  
+</body>
+</html>

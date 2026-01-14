@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubbling and Capturing</title>
+</head>
+<body>
+  <div id = "parent">
+    <p id = "child">This is some text. </p>
+  </div>
+
+  <script>
+    function clickHandler() {
+      // use the this keyword to target the element that called this function:
+      alert("The following item was clicked: " + this.tagName);
+    }
+
+    let divElement = document.getElementById("parent");
+    let childElement = document.getElementById("child");
+  
+
+    // specify that we want capturing behavior, pass in true
+    // false otherwise (but this is also the default so not explicitly necessary)
+    childElement.addEventListener("click",clickHandler, true);
+    divElement.addEventListener("click", clickHandler, true)
+
+  </script>
+  
+</body>
+</html>
