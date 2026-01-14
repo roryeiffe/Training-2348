@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch</title>
+</head>
+<body>
+  <button id = "btn-1">Click to Load Data</button>
+
+  <div id = "content"></div>
+
+  <script>
+    let buttonElement = document.getElementById("btn-1");
+    buttonElement.addEventListener("click", getData);
+
+    let content = document.getElementById("content");
+
+    function getData() {
+      // use fetch to make the request:
+      const base_url = 'https://swapi.info/ai'
+      // invoke the fetch request:
+      fetch(`${base_url}/people`)
+      .then(response => {
+        // convert data to json and print:
+        let data = response.json()
+        return data;
+      })
+      .then(characters => {
+        console.log(characters);
+        // update the page:
+        for(const character of characters) {
+          let nameElement = `<h3>${character.name}</h3>`
+          let birthYear = `<h4>${character.birth_year}</h3>`
+          let characterElement = document.createElement('div');
+          characterElement.innerHTML = nameElement + birthYear;
+          
+          content.appendChild(characterElement);
+        }
+
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Something went wrong when fetching the data")
+      })
+
+
+
+    }
+  </script>
+  
+</body>
+</html>

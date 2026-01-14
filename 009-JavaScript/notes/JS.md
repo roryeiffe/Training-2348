@@ -163,6 +163,7 @@ try {
   - duplicate property/param names
   - assigning values to read-only properties
   - delete an undeleteable property
+- https://www.w3schools.com/js/js_strict.asp 
 - To enable strict mode, we can include the following line:
 ```html
 <script>

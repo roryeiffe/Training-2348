@@ -1,0 +1,13 @@
+## Exercise
+- Based on our star wars example, pick an API online and create a webpage that allows us to click a button (or have it load automatically).
+  - Load data from the api and display it on the page
+  - Display a collection of items and for each item, display at least 2 fields
+  - Don't worry too much about styling, as long as we can see the data on the page and it's clear what that data is
+- Tomorrow morning, we will share screens and show off the data that we fetched
+  - Can be short, just show off the data being pulled in and populating the page
+- Some example APIs
+  - pokemon API
+  - star wars API
+- Optional Task - for any of the APIs that include image links, find a way to render those images on the page
+  - Pokemon API
+- Solo project, but ask for help when needed

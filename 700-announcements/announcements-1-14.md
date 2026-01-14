@@ -1,0 +1,11 @@
+- [Exercise](../009-JavaScript/exercise.md) due tomorrow morning 
+- Portfolio Orientation tomorrow at 10:30 EST AM
+- Coding Challenge Due Friday (see on Rev Pro)
+- QC Friday morning on Java, SQL, Spring
+  - [practice questions](../900-practice-questions/Java-SQL-Spring.md)
+- Multiple Choice Exam on Friday
+- Friday afternoon, we will have at least 2 hours of independent time to work on this stuff
+- KnowBe4 trainings - pending
+- No work on Monday
+- Starting next week, I will be conducting mock interviews in the afternoon
+  - Some Java/SQL/Spring but more focus on front-end since that is new
