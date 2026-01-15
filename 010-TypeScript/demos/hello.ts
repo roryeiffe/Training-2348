@@ -10,7 +10,7 @@ console.log(names);
 // names.push(true);
 
 interface PetI {
-  id: number,
+  id?: number,
   name: string,
   food: string
 }
@@ -21,4 +21,20 @@ let pet:PetI = {
   food: 'chicken'
 }
 
+let pet3: PetI = {
+  name: 'gollum',
+  food: 'chicken'
+}
+
 console.log(pet);
+
+
+let t:any = {
+  name: 'john',
+  pets : [
+    {
+      name: 'Garfield',
+      food: 'lasagna'
+    }
+  ]
+}
