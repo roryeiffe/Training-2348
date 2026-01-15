@@ -29,7 +29,7 @@
 13.  What is @Value used for?
     
 
-### Spring MVC
+### Spring Web MVC
     
 17.  List some stereotype annotations. What are the differences between these?
     

@@ -1,0 +1,18 @@
+- Coding Challenge Due Friday (see on Rev Pro)
+- QC Friday morning on Java, SQL, Spring
+  - [practice questions](../900-practice-questions/Java-SQL-Spring.md)
+  - Will send out a [link](https://teams.microsoft.com/meet/26795907333031?p=PTeMZmKvnLMfRFXY4m), make sure we join this first thing Friday 
+- Multiple Choice Exam on Friday
+  - should be open until 10 EST
+- Friday afternoon, we will have at least 2 hours of independent time to work on this stuff
+- KnowBe4 trainings - pending
+- No work on Monday
+- Starting next week, I will be conducting mock interviews in the afternoon
+  - Some Java/SQL/Spring but more focus on front-end/React since that is new
+- Optional Exercise - Set up a controlled component with a form and include 3 or more fields. 
+  - Include a submithandler that does something with the data upon submission (even if it's just printing it out)
+- Project
+  - Timeline - try to have back-end done soon by tomorrow
+    - Next week, can focus on front-end
+  - Will upload a sample Pet React project (optionally, can view this to get some insight as to how the project will look)
+  - We'll be going through this project together next week

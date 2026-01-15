@@ -1,5 +1,5 @@
 ## React
-- Web Framework that lets us build Single-Page component-based applications
+- Library that lets us build Single-Page component-based applications
 - Component Based - 
   - Each component is going to serve a specific purpose
   - Logic - handling user events (click), fetching data
@@ -110,7 +110,7 @@ return (
 - The useState hook takes in the starting value
 
 #### useEffect
-- Useful when we have potential side effects (interacting with anything outside of the React ecosyatem (API, direct updates to DOM))
+- Useful when we have potential side effects (interacting with anything outside of the React ecosystem (API, direct updates to DOM))
 - Takes in 2 main parameters
   - Callback function to be executed
     - This will contain the side-effects
@@ -119,3 +119,61 @@ return (
     - If no dependency array is passed, the useEffect will run whenever React commits changes to the DOM
     - If an empty dependency array is passed, the effect will run once when the component first loads
     - If we pass a single value to the dependency array, then the useEffect will re-run whenever that particular variable is changed
+  
+#### useRef
+- useRef holds a mutable value that persists across renders without triggering re-renders. Used to reference dom elements
+  - values managed by useRef hook can be accessed with .current
+
+#### useMemo
+- useMemo memoizes a computed value, recalculate when dependencies. Helps to avoid recalculations, especially those that are time-intensive
+
+#### useCallback
+- useCallback memoizes a function reference, preventing unnecessary re-creations across renders. Typically used when passing callback functions to child components
+
+### Handling DOM Events in React with TypeScript
+- We have React-specific Event types that we can use to specify the types of events that we're going to be triggering
+
+#### Common Event Types
+
+##### MouseEvent
+- Used for mouse interactions (clicking, hovering)
+
+```tsx
+function handleClick(event:React.MouseEvent<HTMLButtonElement>) {
+  console.log(event);
+}
+
+```
+
+##### ChangeEvent
+- Commonly used for when inputs change their value
+```tsx
+function handleChange(event:React.ChangeEvent<HTMLInputElement>) {
+  console.log(event.target.value);
+  // guess what the user typing 
+}
+```
+
+##### FormEvent
+- Used for submitting forms, validating data
+```tsx
+function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  // prevent page refresh, let us handle the submission behavior
+  event.preventDefault();
+}
+```
+
+## Controlled vs Uncontrolled Components
+
+### Controlled Components
+Controlled Components store values in React state. The component fully controls the input's value. Typically we will use useState to manage the fields and update them based on the events that occur on the page. 
+
+- Predictable State
+- Easy Validation 
+
+### Uncontrolled Components
+Rely more directly on the DOM itself to manage state. Typically accessed with refs. 
+
+- We don't have as much control
+- Less boilerplate code to set up
+- Useful for simple or legacy form

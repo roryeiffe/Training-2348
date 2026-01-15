@@ -1,9 +1,28 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
+
+const fibonacci = (num: number): number => {
+  // base cases:
+  if(num == 0) return 0;
+  if(num == 1) return 1;
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
 
 export default function Hooks() {
 
   // set up the state
   const [counter, setCounter] = useState<number>(0);
+  // useRef to store mutable values, won't trigger re-renders
+  const counterRef = useRef<number>(0);
+  // create an inputRef to reference the input element
+  // we pass the ref attribute to the element and have it point to the inputRef
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  //useMemo, calculate the nth fibonacci number, based on counter:
+  // callback function is what to run (in this case, just call our fibonacci function)
+  // dependency array includes the values that should trigger this function to recalculate
+  const fib = useMemo(() => {
+    return fibonacci(counter);
+  }, [counter])
 
   const onClickHandler1 = () => {
     // increment the counter value
@@ -15,16 +34,29 @@ export default function Hooks() {
     setCounter(counter - 1);
   }
 
+  const updateCounterRef = () => {
+    counterRef.current += 1;
+    console.log("Ref value: " + counterRef.current);
+  }
+
   useEffect(() => {
     console.log("Use Effect Running");
     // Here is where we could put an API call, for example
+    // We can target the inputRef and "focus" on it, place the cursor inside
+    if(inputRef.current) inputRef.current.focus();
   }, [counter])
 
   return (
     <div>
       <p>The count is {counter} </p>
-      <button onClick={onClickHandler1}>Increment</button>
-      <button onClick={onClickHandler2}>Decrement</button>
+      <p>The value of the counter with useRef is {counterRef.current}</p>
+      <p>Fibonacci Value (based on counter): {fib}</p>
+      <button onClick={onClickHandler1}>Increment (useState)</button>
+      <button onClick={onClickHandler2}>Decrement (useState)</button>
+      <button onClick={updateCounterRef}>Increment (useRef)</button>
+    
+      {/* Rendering an input item,  */}
+      <input placeholder='rory123' ref={inputRef}/>
     </div>
 
   )
