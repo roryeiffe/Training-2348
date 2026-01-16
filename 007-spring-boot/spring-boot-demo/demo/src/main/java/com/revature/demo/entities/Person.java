@@ -1,5 +1,6 @@
 package com.revature.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class Person {
     // set up person-pet relationship, person can adopt many pets:
     @OneToMany(targetEntity=Pet.class, cascade=CascadeType.ALL)
     @JoinColumn(name="person_fk", referencedColumnName = "id")
+    @JsonManagedReference // will serialize this when sending from controller
     private List<Pet> adoptedPets;
 
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class PersonController {
     @Autowired
@@ -30,7 +31,7 @@ public class PersonController {
     // for our use case, we also need to pass the username/password through the body
     // because these are sensitive fields
     @PostMapping("/login")
-    public ResponseEntity<Person> login(@RequestBody LoginDTO loginDTO) throws PasswordFailedException {
+    public ResponseEntity<Person> login(@RequestBody LoginDTO loginDTO) throws PasswordFailedException, PersonNotFoundException {
         Person person = this.personService.login(loginDTO.getUsername(), loginDTO.getPassword());
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
@@ -48,7 +49,7 @@ public class PersonController {
 
     // This method takes a personId from the path and then returns all pets that were
     // adopted by that person
-    @GetMapping("/persons/{personId}")
+    @GetMapping("/persons/{personId}/pets")
     public ResponseEntity<List<Pet>> getAdopted(@PathVariable("personId") Long personId) {
         List<Pet> pets = this.personService.getAdoptedPets(personId);
         return new ResponseEntity<>(pets, HttpStatus.OK);

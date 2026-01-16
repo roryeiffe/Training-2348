@@ -1,5 +1,6 @@
 package com.revature.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import jakarta.validation.constraints.NotEmpty;
@@ -27,6 +28,12 @@ public class Pet {
     @NotEmpty
     @Column(name = "food")
     private String food;
+
+    // NEW STUFF:
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_fk")  // pet.person_fk -> person.id
+    @JsonBackReference // Will not serialize this value when being sent from controller
+    private Person owner;
 
     public Pet(Long id, String name, String species, String food) {
         this.id = id;
@@ -78,5 +85,13 @@ public class Pet {
                 ", species='" + species + '\'' +
                 ", food='" + food + '\'' +
                 '}';
+    }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
     }
 }

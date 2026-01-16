@@ -1,5 +1,6 @@
 package com.revature.demo.services;
 
+import com.revature.demo.entities.Person;
 import com.revature.demo.entities.Pet;
 import com.revature.demo.exceptions.PetNotFoundException;
 import com.revature.demo.repositories.PetRepository;
@@ -54,6 +55,12 @@ public class PetService {
             throw new PetNotFoundException();
         }
         this.petRepository.deleteById(id);
+    }
+
+    public Person getOwner(Long id) {
+        Pet pet = this.petRepository.findById(id).orElseThrow();
+        Person owner = pet.getOwner();
+        return owner;
     }
 
 }

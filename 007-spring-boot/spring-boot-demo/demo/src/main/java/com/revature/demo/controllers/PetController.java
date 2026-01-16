@@ -1,9 +1,11 @@
 package com.revature.demo.controllers;
 
+import com.revature.demo.entities.Person;
 import com.revature.demo.entities.Pet;
 import com.revature.demo.exceptions.PetNotFoundException;
 import com.revature.demo.services.PetService;
 import com.revature.demo.validators.PetValidator;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 //@Controller // default stereotype for creating controllers
 @RestController // Includes @Controller and @ResponseBody (indicates that we are returning
 // responses/entities
@@ -77,6 +80,11 @@ public class PetController {
     public ResponseEntity<String> delete(@PathVariable("id") Long id) throws PetNotFoundException {
         this.petService.delete(id);
         return new ResponseEntity<>("Pet was deleted!", HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}/owner")
+    public ResponseEntity<Person> findOwner(@PathVariable("id") Long id) throws Exception {
+        return new ResponseEntity<>(this.petService.getOwner(id), HttpStatus.OK);
     }
 
 }

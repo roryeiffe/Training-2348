@@ -27,8 +27,9 @@ public class PersonService {
         return person;
     }
 
-    public Person login(String username, String password) throws PasswordFailedException{
+    public Person login(String username, String password) throws PersonNotFoundException, PasswordFailedException{
         Person personDB = this.personRepository.findByName(username);
+        if(personDB == null) throw new PersonNotFoundException();
         if(personDB.getPassword().equals(password)) return personDB;
         else throw new PasswordFailedException();
     }
