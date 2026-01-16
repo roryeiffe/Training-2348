@@ -64,7 +64,7 @@ export default function ControlledComponent() {
 
 
     </form>
-
+{/* 
     <div>State (This should display the data from state):
       <h3>
         Username: {user.username}
@@ -72,7 +72,7 @@ export default function ControlledComponent() {
       <h3>
         Password: {user.password}
       </h3>
-    </div>
+    </div> */}
     </div>
   )
 }

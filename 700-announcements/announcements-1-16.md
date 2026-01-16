@@ -1,0 +1,11 @@
+- Quiz on Rev Pro, due at 10 EST
+  - Feel free to hop off call for this
+- Coding Challenge 
+  - If you have not started, do NOT start until we hear back from QC
+  - don't worry about the deadline if we don't hear back before then
+- Keep working on project, we'll start the Pet demo on Tuesday
+- No work on Monday
+- Mock Interviews - focusing on React, Spring
+- I will upload project descriptions for portfolio
+- Timesheets and Survey 
+- 

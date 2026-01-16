@@ -177,3 +177,96 @@ Rely more directly on the DOM itself to manage state. Typically accessed with re
 - We don't have as much control
 - Less boilerplate code to set up
 - Useful for simple or legacy form
+
+## React Router
+- Up until now, we've been rendering all of our components directly in App.tsx
+```tsx
+function App() {
+  return (
+    <div>
+      <HelloWorldComponent message ="hello world" author = "Dr. Suess" />
+      <HelloWorldComponent message ="hello world" />
+      <Hooks />
+      <EventExample />
+      <ControlledComponent />
+      <UncontrolledComponent />      
+    </div>
+  );
+}
+```
+- Manually commenting/uncommenting kind of works for small demos but definitely not scalable/automatic
+- React Router is a dependency that will allow us to configure routes and corresponding components
+  - ex: If I go to localhost:3000/form -> display a form component
+  - localhost:3000/pets/5 -> Render the pet component and programmatically utilize the number 5 that was passed in
+
+
+### Install
+- From your command line, at the root level of the React project, we can run ```npm install react-router-dom```
+### Tags/Features
+- BrowserRouter - wrapper tag that must wrap around everything related to Routing, otherwise routing will not work
+- Routes - wrapper tag that wraps around all of the Route components (this goes inside of BrowserRouter)
+- Route - represents an individual route, lets us specify the path and corresponding component
+- Link - represents a clickable element, can specify which react-router route to take
+  - This is different from passing an href
+
+### Basic Structure:
+```tsx
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<HelloWorldComponent message='Welcome to React!'/>}></Route>
+    <Route path = "/hooks" element={<Hooks/>}/>
+    <Route path = "/events" element={<EventExample/>}/>
+    <Route path = "/controlled" element={<ControlledComponent/>}/>
+    <Route path = "/uncontrolled" element={<UncontrolledComponent/>}/>
+  </Routes>
+
+</BrowserRouter>
+
+```
+
+### Navbar:
+```tsx
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+export default function Navbar() {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to='/'>Welcome</Link>
+        </li>
+        <li>
+          <Link to='/hooks'>Hooks</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
+```
+- We want to render the Navbar within BrowserRouter so it has routing functionality but outside of Routes because we want the Navbar to exist on every page.
+
+### Extracting Values from the Path
+- useParams can be imported from react-router-dom and invoked to retrieve information from the path
+- Will return an object from which we can extract the variables
+- For this to work, we need to configure our route to take in a dynamic value
+```tsx
+<Route path = "/component:val" element = {<Component/>} >
+```
+
+### Manually/Programatically Redirect
+- We've already seen <Link> elements which are clickable
+- We can utilize the useNavigate hook to specify a path to redirect to in our code
+- useNavigate() returns a function that is used to navigate
+
+## Axios
+- Used to consume external APIs (like our Spring back-end)
+- Different methods for different HTTP methods (post, put, delete, get)
+- Returns a promise
+  - We can use .then and .catch to handle the results
+  - Or, if we're inside of an async function, we can await the results of the promise and use them directly
+- The first argument will be the endpoint (localhost, etc..)
+- axios.post and axios.put take in complex objects, so the 2nd argument will be whatever entity/object you're sending
+
+### Installation
+- ```npm i axios```

@@ -6,16 +6,28 @@ import Hooks from './components/Hooks';
 import EventExample from './components/EventExample';
 import ControlledComponent from './components/ControlledComponent';
 import UncontrolledComponent from './components/UncontrolledComponent';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import RoutingExample from './components/RoutingExample';
+import AxiosExample from './components/AxiosExample';
 
 function App() {
   return (
     <div>
-      {/* <HelloWorldComponent message ="hello world" author = "Dr. Suess" /> */}
-      {/* <HelloWorldComponent message ="hello world" /> */}
-      {/* <Hooks /> */}
-      {/* <EventExample /> */}
-      {/* <ControlledComponent /> */}
-      <UncontrolledComponent />
+      
+      <BrowserRouter> 
+      <Navbar /> 
+        <Routes>
+          <Route path = "/" element={<HelloWorldComponent message='Welcome to React!'/>}></Route>
+          <Route path = "/hooks" element={<Hooks/>}/>
+          <Route path =  "/events" element={<EventExample/>}/>
+          <Route path = "/controlled" element={<ControlledComponent/>}/>
+          <Route path = "/uncontrolled" element={<UncontrolledComponent/>}/>
+          <Route path = "/routing/:id" element={<RoutingExample />}/>
+          <Route path = "/axios" element={<AxiosExample/>}/>
+        </Routes>
+      
+      </BrowserRouter>
 
       
     </div>

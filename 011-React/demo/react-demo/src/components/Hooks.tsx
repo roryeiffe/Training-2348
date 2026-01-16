@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react'
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import HookChild from './HookChild';
 
 const fibonacci = (num: number): number => {
+  return 0;
   // base cases:
-  if(num == 0) return 0;
-  if(num == 1) return 1;
-  return fibonacci(num - 1) + fibonacci(num - 2);
+  // if(num === 0) return 0;
+  // if(num === 1) return 1;
+  // return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
 export default function Hooks() {
@@ -39,6 +41,16 @@ export default function Hooks() {
     console.log("Ref value: " + counterRef.current);
   }
 
+  // create a callback function:
+  const doubleCount = useCallback(() => {
+    // make a copy of the counter state, double it and assign it back
+    let currentCount = counter;
+    currentCount *= 2;
+    setCounter(currentCount);
+    // setCounter(counter * 2); // shorter syntax
+  }, [counter])
+
+
   useEffect(() => {
     console.log("Use Effect Running");
     // Here is where we could put an API call, for example
@@ -55,6 +67,9 @@ export default function Hooks() {
       <button onClick={onClickHandler2}>Decrement (useState)</button>
       <button onClick={updateCounterRef}>Increment (useRef)</button>
     
+      <HookChild onClickCB={doubleCount}/>
+
+
       {/* Rendering an input item,  */}
       <input placeholder='rory123' ref={inputRef}/>
     </div>
