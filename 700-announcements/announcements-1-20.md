@@ -3,7 +3,27 @@
 - Project 1 will be due on Friday
   - Presentations around 10 EST
   - I will be away until around 10 EST
-- Still no word on coding challenge or Knowbe4
+  - To show off your project, just want to see all of the use cases through the front-end
+    - No need to show the code unless asked about during the question portion
+    - Time Limit - aim for 10 minutes
+- Still waiting to hear back KnowBe4
 - Mock Interviews will be this week in the afternoon
   - I will send out a sign-up sheet for you to fill out your name
   - Focus on React as well as Spring
+- Coding Challenge
+  - The input for Java coding challenge is taken in from Scanner
+    - Should be a make-up coding challenge assigned this week 
+  - In addition to the first SQL coding challenge
+    - There will be 2 coding challenges to finish
+  - Should be open from Wednesday to Friday
+- The front-end + React (weeks 3-4 of training) QC will be next Monday at 9 EST
+- QC Feedback
+  - I will message people individually and list out
+    - What topics to focus on
+    - Any soft-skill issues/things to work on
+- Stand-Ups
+  - What you've been working on since the last stand-up
+  - What you plan on working on next
+  - Any technical issues/blockers (waiting for back-end, haven't covered that topic, experiencing issues with React)
+- Portfolios (due Friday)
+  - See [Portfolio Tips](../800-projects/portfolio-tips.md)
