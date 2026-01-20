@@ -1,0 +1,9 @@
+- Today, we will go through a Pet React project
+  - Will go over some back-end changes 
+- Project 1 will be due on Friday
+  - Presentations around 10 EST
+  - I will be away until around 10 EST
+- Still no word on coding challenge or Knowbe4
+- Mock Interviews will be this week in the afternoon
+  - I will send out a sign-up sheet for you to fill out your name
+  - Focus on React as well as Spring

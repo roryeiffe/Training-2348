@@ -74,7 +74,7 @@ const Greeting = ({name}: Props) => {
   - Return tsx which will be displayed in the browser
 - VSCode shortcut - 'rfc' + enter, will create a new,empty function
 #### Typing Props
-- If we expliticlty set up the type for our props, we can include that in function declaration
+- If we explicitly set up the type for our props, we can include that in function declaration
 ```ts
 type HelloWorldProps = {
   message: string,
@@ -270,3 +270,14 @@ export default function Navbar() {
 
 ### Installation
 - ```npm i axios```
+
+### Styling
+- We can apply styling to our components by importing css files:
+```import './App.css';```
+  - The only downside to this approach is these styles will be applied for all components (even if we don't import them to that particular file). This is good for global styles but not if we want component-specific stylings that we don't any other components to use
+- We can create css module files
+  - Files end with .module.css
+  - These files can be imported into the components and used as classNames
+  - If we inspect these class names using chrome devtools, we should see a random string appended to the end of these class names so that they don't conflict with other class names
+  - With module.css files, we want to work with classes because if we specify elements, those stylings will be applied globally
+

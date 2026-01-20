@@ -1,0 +1,16 @@
+## Full-Stack Application Flow
+- Start with back-end, defining our entities
+  - Classes/Tables
+    - Fields/Columns
+  - Relationships between entities
+- Working on back-end
+  - Start with Repository layer
+    - Initialize them and add any custom methods we might need
+  - Set up service layer to call the methods in the repository layer
+    - Including any business logic
+  - Set up controller layer to call service methods
+    - Set up our API, adhering to REST constraints
+- Work on front-end
+  - For each endpoint on our back-end, we will need some component/view to interact with that
+  - With our back-end already built, can see how the data fits into our front-end as we go
+  - Might find that edits need to be made to back-end
