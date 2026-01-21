@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import RoutingExample from './components/RoutingExample';
 import AxiosExample from './components/AxiosExample';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path = "/uncontrolled" element={<UncontrolledComponent/>}/>
           <Route path = "/routing/:id" element={<RoutingExample />}/>
           <Route path = "/axios" element={<AxiosExample/>}/>
+          <Route path = "/formhook" element={<Login/>}/>
         </Routes>
       
       </BrowserRouter>

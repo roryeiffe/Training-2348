@@ -281,3 +281,45 @@ export default function Navbar() {
   - If we inspect these class names using chrome devtools, we should see a random string appended to the end of these class names so that they don't conflict with other class names
   - With module.css files, we want to work with classes because if we specify elements, those stylings will be applied globally
 
+## Context API
+- Context lets share certain values across many different components without the need to pass them in as props
+  - Passing values as props is useful for some situations (when you're dealing with a few components)
+  - For certain values, such as authentication state which is used across the app, it is better to use the context API
+  - Prop Drilling - bunch of nested components, passing the props from one parent to the next
+    - This problem is avoided by using context API
+- Use Cases for Context API (Low Frequency Updates, Highly Important State)
+  - Authentication State
+  - Theme (Light/Dark Mode)
+  - User Preferences
+- Not a full replacement for something like redux, but useful for its own use cases
+
+### Implementation
+- First, we will define the shape of the data we're keeping track of as well as the functions that manipulate it
+  - For authentication, keep track of
+    - The user object
+    - login function
+    - logout function
+- Then, we set up a Provider which contains all of the logic for updating the state
+  - This Provider can take and render children
+  - Everything wrapped in the provider will have access to the context
+
+## Custom Hooks
+- Is a function we can create in our React application
+- While React components are re-usable pieces of UI, custom hooks are reusable logic
+- starts with "use"
+- Calls one or more built-in hooks (useState, useEffect)
+- We can create a useAuth hook that handles the AuthContext and checks for null values
+
+
+## React Hook Forms
+- Dependency we can add to our project, helps us make more reliable forms
+- Gives us some tools to work with forms (errors/validation, isSubmitting)
+- Works nicely with TypeScript, we can set up the types for the data that the form is collecting
+- Install - `npm install react-hook-form`
+### Implementation
+- Start by defining the type for our data
+- Configure which aspects of React Hook Form we want to use (errors, isValid, isSubmitting)
+  - For example, we can grey out the submit button if the data isn't valid
+  - We can check/validate our data before submitting
+- Create the form, utilizing aspects of React Hook Form where applicable
+- See what types of features/validation are offered [here](https://react-hook-form.com/docs/useform/register)

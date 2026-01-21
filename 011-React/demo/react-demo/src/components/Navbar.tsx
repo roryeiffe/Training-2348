@@ -23,6 +23,9 @@ export default function Navbar() {
         <li>
           <Link to = "/axios">Axios Example</Link>
         </li>
+        <li>
+          <Link to = "/formhook">React Hook Form Example</Link>
+        </li>
       </ul>
     </nav>
   )

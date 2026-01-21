@@ -1,9 +1,10 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import base_url from '../util/url';
-import { Pet, Person } from '../util/types';
+import { Pet, Person} from '../util/types';
 import styles from './PetItem.module.css'
+import useAuth from '../util/useAuth';
 
 // This component will represent an individual pet entity
 // It will display information about the pet, let us edit/delete the pet
@@ -13,7 +14,11 @@ export default function PetItem() {
   const params = useParams();
   const id = params.id;
 
+  // Setting up our pet state
   const [pet, setPet] = useState<Pet | null>(null);
+
+  // retrieve our context from our custom hook:
+  const context = useAuth();
 
   // store the result of useNavigate in navigate
   const navigate = useNavigate();
@@ -64,6 +69,8 @@ export default function PetItem() {
 
   // Adopt pet, but we need to make sure the pet isn't already taken/claimed
   const onAdoptHandler = async () => {
+    // ensure we are logged in before trying to adopt:
+    if(!context.user) return;
     // We can use await to "wait" for the promise to fulfill before working with the data
     if(!pet) return;
 
@@ -73,7 +80,7 @@ export default function PetItem() {
     // check, ensure that the corresponding owner is shelter
     if(owner.id === 1) {
       // TODO: Fetch this from our current logged in state
-      let new_owner_id = 2; // For now, hard-coding this value as Shaggy
+      let new_owner_id = context.user.id;
       try {
         // perform the adoption:
         await axios.put(`${base_url}/persons/${new_owner_id}/pets/${pet.id}`)
