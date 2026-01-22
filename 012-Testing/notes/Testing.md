@@ -40,3 +40,8 @@
   - 100% Coverage doesn't mean the app is free of bugs
 - Line Coverage - which specific lines were covered
 - Branch Coverage - ensuring all paths in control flow are reached (if/else, switch)
+
+## JUnit
+- JUnit is how we write tests in Java
+- Comes with different assert methods
+- Includes annotations like @Before and @After to indicate code that we want to run before/after the tests
