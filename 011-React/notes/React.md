@@ -83,8 +83,9 @@ type HelloWorldProps = {
 export default function HelloWorld({message, author}: HelloWorldProps)
 ```
 - React.FC is a generic type for React function components
-  - Can use this without having to create a separate inerface/type
   - FC = Functional Component
+  - In past versions, would implicitly include children in prop type so we wouldn't have to configure that ourselves
+  - 
 
 ### Hooks
 - Hooks are features of React that provide us with additional functionality
@@ -200,6 +201,8 @@ function App() {
   - localhost:3000/pets/5 -> Render the pet component and programmatically utilize the number 5 that was passed in
 
 
+
+
 ### Install
 - From your command line, at the root level of the React project, we can run ```npm install react-router-dom```
 ### Tags/Features
@@ -258,6 +261,25 @@ export default function Navbar() {
 - We've already seen <Link> elements which are clickable
 - We can utilize the useNavigate hook to specify a path to redirect to in our code
 - useNavigate() returns a function that is used to navigate
+
+### Nested Routes
+- We can define nested routes by placing Route tags within another Route tag
+- Useful for swapping information out on a single page
+- Make use of a special tag <Outlet> which renders child Route based on the path
+```tsx
+<Route path="/dashboard" element={<AppLayout />}>
+  <Route index element={<DashboardHome />} />
+  <Route path="settings" element={<DashboardSettings />} />
+</Route>
+  ```
+
+### Route Guards
+- Some pages on our website are restricted to users who are logged in/authenticated
+  - Route Guards help to check those conditions (authenticated, etc.) and re-routes if you do not meet those conditions
+- We can set up nested routes
+  - The outer route acts as the router guard, checks authentication state and renders children if valid, redirect otherwise
+  - Anything we render inside out of the Route guard will prevent non-authenticated users from navigating to it
+
 
 ## Axios
 - Used to consume external APIs (like our Spring back-end)

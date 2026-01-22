@@ -122,3 +122,36 @@ function print(value: string | number) {
 ### Special Types
 - any - means that any structure will be allowed
   - Only use it if you have to, undoes some of the benefits of TypeScript
+
+
+### Utility Types
+- Special types that we can apply to existing types as opposed to creating entirely new types
+- Partial - makes all properties optional
+```ts
+// assuming we have an existing User Type
+type PartialUser = Partial<User>;
+```
+- Pick - pick which properties are required
+```ts
+type UserName = Pick<User, "name">
+```
+- Omit - remove specified properties
+```ts
+type UserWithoutRole = Omit<User, "role">
+```
+- Record - set up key and value pairs and specify the types of key/values
+```ts
+type ScoreBoard = Record<string, number>;
+```
+
+### Classes and Inheritance
+- We looked at inheritance in Java
+- Classes that extend from others inherit properties/methods
+- Works similarly in TS, but with different syntax
+
+### Function Typing and Overloads
+- We can apply types to the parameters and outputs of functions
+- We can overload functions by specifying the same name but including different parameters (different types, different number of params, different order of params)
+
+### Generic Types
+- Allow function types (params or return value) to be parameterized. Allow us to specify the type whenever we utilize the function

@@ -26,6 +26,9 @@ export default function Navbar() {
         <li>
           <Link to = "/formhook">React Hook Form Example</Link>
         </li>
+        <li>
+          <Link to = "/profile">Profile Page</Link>
+        </li>
       </ul>
     </nav>
   )
