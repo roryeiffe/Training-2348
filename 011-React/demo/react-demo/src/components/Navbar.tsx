@@ -29,6 +29,9 @@ export default function Navbar() {
         <li>
           <Link to = "/profile">Profile Page</Link>
         </li>
+        <li>
+          <Link to = "/card">Card Test Component</Link>
+        </li>
       </ul>
     </nav>
   )

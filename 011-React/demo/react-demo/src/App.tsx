@@ -15,6 +15,7 @@ import Profile from './components/nested/Profile';
 import Preferences from './components/nested/Preferences';
 import Settings from './components/nested/Settings';
 import RequireAuth from './components/RequireAuth';
+import CounterCard from './components/testing/CounterCard';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path = "/controlled" element={<ControlledComponent/>}/>
             <Route path = "/uncontrolled" element={<UncontrolledComponent/>}/>
           </Route>
+          <Route path = "/card" element = {<CounterCard title = "Counter Test" initialCount={20}/>}/>
         </Routes>
       
       </BrowserRouter>
