@@ -15,3 +15,7 @@
 
 ## After the Interview
 1. Remember what questions/topics gave you trouble and focus studying on those. 
+
+
+## Questions to ask during the interview:
+- 

@@ -1,0 +1,10 @@
+- Portfolios - all approved
+- Mock Interviews starting 2/2/2026
+- Later this week
+  - Tuesday
+    - Hibernate
+    - Introduce Project
+  - Wednesday
+    - Microservices
+  - Thursday
+    - Microservices Continued

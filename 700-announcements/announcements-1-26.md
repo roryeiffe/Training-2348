@@ -1,0 +1,12 @@
+- QC Exam: Web Development w/ React
+- Portfolios - make sure to submit by EOD
+- Studying - based on Mock Interview Feedback and QC Feedback
+- Mock Interviews starting 2/2/2026
+- Later this week
+  - Tuesday
+    - Hibernate
+    - Introduce Project
+  - Wednesday
+    - Microservices
+  - Thursday
+    - Microservices Continued
