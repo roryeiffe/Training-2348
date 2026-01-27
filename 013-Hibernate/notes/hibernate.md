@@ -100,6 +100,27 @@ tx.commit();
 Query query=session.createQuery();
 ```
 
+### Native Queries
+- Hibernate does offer its own HQL language but we can also write native SQL queries 
+  - Letting us write PostgreSQL-like commands
+- session.createNativeQuery(String query, class clazz)
+  - Assuming we have set up a string with the SQL query, pass that in
+  - Can specify which query to run and the class to be returned
+- Stack Overflow on SQL Injection: https://stackoverflow.com/questions/31314209/prevent-sql-injection-with-hibernate 
+
+### Object States
+- Are the Java objects connected/in sync to the database? 
+- Transient - an object is created but not yet associated with a Hibernate session
+  - Doesn't represent a row in the database
+- Persistent - an object that is associated with a session
+  - Represents a row in the database
+  - Hibernate will detect changes and synchronize that with the database
+  - We can make a transient object persistent by invoking save(), persist(), saveOrUpdate()
+- Detached
+  - When the persistent object's session closes, the object will be in the detached state
+  - Changes to the object will no longer affect the database
+  - If this object gets re-attached a session, it will be persistent
+
 
 
 ### Hibernate Demo
@@ -107,3 +128,13 @@ Query query=session.createQuery();
 - DBraver opened up with a new database created
   - create database name;
   - Connect to it
+
+## HQL
+- Hibernate Query Language
+- Object-oriented query language
+- Query against objects instead of tables/columns
+- Advantages
+  - Database independent - we can abstract the logic away from the specific dialect
+  - Supports OOP concepts abstraction, inheritance
+- To use HQL, we invoke session.createQuery(String hql, Class clazz)
+  - Similar format to createNativeQuery
