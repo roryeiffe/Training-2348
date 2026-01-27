@@ -19,6 +19,15 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
 
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.JCacheRegionFactory</property>
+
+        <!-- Tell JCache/Ehcache which provider to use -->
+        <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+
+        <!-- Optional: where your cache config lives -->
+        <property name="hibernate.javax.cache.uri">classpath:ehcache.xml</property>
+
         <!-- We need this to be able to persiste Employee objects -->
         <mapping class="org.example.models.Employee"/>
 

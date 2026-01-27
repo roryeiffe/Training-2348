@@ -1,5 +1,7 @@
 - Portfolios - all approved
 - Mock Interviews starting 2/2/2026
+  - hour long
+  - most likely cumulative
 - Later this week
   - Tuesday
     - Hibernate
@@ -8,3 +10,7 @@
     - Microservices
   - Thursday
     - Microservices Continued
+- Keep an eye out for mock interview invitations
+- KnowBe4
+  - Please try to login and complete one, disregard the completion date
+  - If that works, start completing them when you have the time

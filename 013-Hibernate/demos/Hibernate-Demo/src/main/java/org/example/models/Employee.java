@@ -1,9 +1,18 @@
 package org.example.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Cache;
 
 @Entity
 @Table(name = "employee")
+//@Cacheable
+//@Cache(usage= CacheConcurrencyStrategy.READ_WRITE) // indicates that we've using L2 cache and reading/writing
+@NamedQueries({
+        @NamedQuery(name="viewAllEmployees", query = "FROM Employee e"),
+        @NamedQuery(name="viewGriffins", query="FROM Employee e WHERE e.lastName='Griffin'"),
+        @NamedQuery(name="findByEmail", query="FROM Employee e WHERE e.email=:email") // dynamic property
+})
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

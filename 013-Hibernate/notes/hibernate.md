@@ -138,3 +138,75 @@ Query query=session.createQuery();
   - Supports OOP concepts abstraction, inheritance
 - To use HQL, we invoke session.createQuery(String hql, Class clazz)
   - Similar format to createNativeQuery
+
+## Named Queries
+- SQL expression with a predefine/unchangeable query string
+  - Can be defined in the Hibernate mapping file or in the associated entity class
+- Annotations
+  - NamedQueries - multiple HQL expressions
+  - NamedNativeQueries - multiple SQL expressions
+  - NamedQuery - single HQL expression
+  - NamedNativeQuery - single SQL expression
+- Attributes - 
+  - name - used to name the query and reference it later
+  - query - the expression itself
+
+## ACID
+- A - Atomicity - all of the command executes or none (like transferring money from one account to the other)
+- C - Consistency - ensuring the database stays in a consistent state after a transaction
+- I - Isolation - operations in one transaction don't interfere with another
+- D - Durability - Able to recover if something happens like natural disaster/power outage
+
+## Caching
+- Help with performance by reducing the number of times we hit the database
+- Level 1 Caching
+  - Enabled by Default , happening implicitly
+  - Caching is performed by the session so if we have 2 different sessions, then those caches will be independent of each other
+  - Useful for queries
+    - If we query for some data the first time, we hit the database directly and then store the results in the cache
+    - But if we execute the same query with the same session, the data will be retrieved from the cache
+- Level 2 Caching 
+  - Disabled by default, can be enabled via the configuration file
+  - Associated with the SessionFactory, accessed from many sessions
+  - When we query for an object, search the L1 cache first but if it finds no matches, then it will look in the L2 cache
+### Enabling L2 Caching
+- First, add the following to our cfg file, inside of the SessionFactory tag but above the mappings
+```xml
+<property name="hibernate.cache.use_second_level_cache">true</property>
+      <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.JCacheRegionFactory</property>
+
+      <!-- Tell JCache/Ehcache which provider to use -->
+      <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+
+      <!-- Optional: where your cache config lives -->
+      <property name="hibernate.javax.cache.uri">classpath:ehcache.xml</property>
+```
+- Also need to add jcache to pom.xml:
+```xml
+<!-- Source: https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-jcache -->
+<dependency>
+  <groupId>org.hibernate.orm</groupId>
+  <artifactId>hibernate-jcache</artifactId>
+  <version>7.2.1.Final</version>
+  <scope>compile</scope>
+</dependency>
+```
+### How to enable L2 caching for an entity:
+- @Cacheable - indicates that the object is cacheable
+- @Cache - specify that we want to use L2 caching, specify concurrency strategy
+- Cache Concurrency Strategies:
+  - READ_ONLY - indicates that this entity is read-only, not being changed
+  - NONSTRICT_READ_WRITE - doesn't guarantee consistency between cache and database so used for data that is rarely updated
+  - READ_WRITE - used when we want to read and write the data
+  - TRANSACTIONAL - used to cache entire transactions
+
+## Criteria
+- A way to build more queries programmatically
+- Provides an object-oriented and type-safe way to retrieve data from the database
+- Common Interfaces
+  - CriteriaBuilder - the factory where it all starts, includes tools/methods to build queries
+    - ex:=, <, LIKE
+  - CriteriaQuery - the blueprint for the query itself, includes typing for what the query is returning
+    - contains methods like .where, .distinct(), etc. that correlate nicely to the clauses we saw in SQL
+  - Root - represents the entity that we're querying
+    - Let us access the fields of the entity
