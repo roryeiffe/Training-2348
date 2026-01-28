@@ -1,4 +1,4 @@
-## The  Workshop Application
+## The Workshop Application
 - Workshop Application
   - Workshops can be given to teach certain skills/information
   - People can register for workshops
@@ -23,3 +23,24 @@
   - Spring Cloud Config Client
     - A way to centralize configuration for the application
 - Download the zip file, extract it, and open in IntelliJ
+
+### Order of Classes/Packages
+- Configuring properties in the application.yml
+- Create Model classes
+- Create DTOs (can use records for immutable DTOs)
+- Repository Layer - works like we've seen them before
+- Service
+- Controller
+  - Workshop Controller
+  - Internal Workshop Controller
+    - Configuring endpoints that we want the other microservice to access
+  - Global Exception Handler
+
+### @Version Annotation
+- We can annotate a version field (must be a whole number like int, Long, etc.) with Version annotation
+- Under the hood, JPA
+  - Read the entity + version
+  - Allows changes
+  - When we try to update, check the version
+  - Fails if we see that another transaction tried to modify it
+- https://stackoverflow.com/questions/2572566/java-jpa-version-annotation
