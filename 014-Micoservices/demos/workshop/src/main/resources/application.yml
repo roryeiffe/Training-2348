@@ -1,0 +1,12 @@
+# This is another way to store properties for our Spring Boot app
+# If we saw a field like server.port=8081
+# We can re-write it like this:
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url:
+    driver-class-name:
+    username:
+    password:
