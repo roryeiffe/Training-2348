@@ -22,13 +22,14 @@ public class WorkshopController {
     }
 
     @GetMapping // We don't specify the path because of the class-level @RequestMapping annotation
-    public List<WorkshopResponse> list() {
+    public List<WorkshopResponse> list() throws Exception{
         List<Workshop> workshops = workshopService.getAll();
+        throw new Exception();
         // Here, we convert our Workshop list to a stream
         // The map function creates a WorkshopResponse object based on the Workshop
         // .collect is a terminal operation that takes all of the data from the stream and converts it to a collection, list in this case
-        List<WorkshopResponse> workshopResponses = workshops.stream().map(w -> new WorkshopResponse(w.getId(), w.getTitle(), w.getCapacity(), w.getSeatsTaken(), w.getStartsAt())).collect(Collectors.toList());
-        return workshopResponses;
+//        List<WorkshopResponse> workshopResponses = workshops.stream().map(w -> new WorkshopResponse(w.getId(), w.getTitle(), w.getCapacity(), w.getSeatsTaken(), w.getStartsAt())).collect(Collectors.toList());
+//        return workshopResponses;
     }
 
     @RequestMapping(method = RequestMethod.POST)

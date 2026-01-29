@@ -31,7 +31,7 @@
 - Repository Layer - works like we've seen them before
 - Service
 - Controller
-  - Workshop Controller
+  - Workshop Controller - standard controller
   - Internal Workshop Controller
     - Configuring endpoints that we want the other microservice to access
   - Global Exception Handler
@@ -44,3 +44,20 @@
   - When we try to update, check the version
   - Fails if we see that another transaction tried to modify it
 - https://stackoverflow.com/questions/2572566/java-jpa-version-annotation
+
+## Registration Service
+- Will provide the functionality to register for a workshop or un-enroll from a workshop
+- Can also view recent registrations
+- Will need to specify compensating actions if we try to register and it fails
+- Will also implement CQRS, have different models for read and writing registrations
+### Dependencies
+- Go to start.spring.io and include the following dependencies:
+  - Spring Web
+  - Spring Data JPA
+  - PostgreSQL
+  - H2
+  - Spring Boot Actuator
+  - OpenFeign
+  - Spring Cloud Consul Discovery
+  - Spring Cloud Config Client
+  - Lombok

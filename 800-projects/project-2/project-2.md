@@ -4,7 +4,7 @@ Develop a full-stack social media platform using a microservices architecture. T
 
 This will be a group project. (1 team of 4 and 1 of 5)
 
-We will present next Thursday or Friday. 
+We will present next Friday. 
 
 ### Objective / Tools Used: 
 Java, Spring, Spring Boot, React, JavaScript, TypeScript
@@ -130,4 +130,17 @@ Java, Spring, Spring Boot, React, JavaScript, TypeScript
     - One/Two people takes on service
 - Pick a distinct them (Hogwarts social media site, Star Wars, Sports, etc.)
   - Can use https://coolors.co/?home for picking color palettes
+
+
+### Presentation
+- Everyone has to speak at least once, can talk about the services/features you worked on
+- What to Include
+  - Technologies Used
+  - Overview of user stories and stretch goals
+  - Overview of Challenges Faced
+  - Learning Outcomes
   
+### How many Services
+- Minimum: 2
+- The more we have the more realistic the design becomes but it will increase the complexity of the project
+- Either way, can talk about the decision made in the presentation

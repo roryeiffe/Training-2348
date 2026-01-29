@@ -1,0 +1,13 @@
+- Projects due next Friday
+  - Talk about setting up a code freeze
+    - Say 24 or 48 hours before the deadline, halt all progress on new features
+    - Can clean up bugs if things aren't working
+    - Preparing Presentation
+    - Prioritize fully-completed features over
+  - Starting today, when you first meet do your daily stand-ups
+  - One person from each group will meet with Rory and give the run-down
+- Java Level 2 Coding Challenge
+  - Due by Friday
+  - Be wary of how the input is handled
+- Mock Interviews on 2/2/2026
+- Some mock interviews with Rory this week
