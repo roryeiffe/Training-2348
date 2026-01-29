@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import java.time.Instant;
 
 /**
- * Will be used to encapsulate the data when we are querying for registation objects
+ * Will be used to encapsulate the data when we are querying for registration objects
  * This class will encapsulate the "view" version of registration, including all the fields we would want to see when we read this data from the database
  */
 @Entity

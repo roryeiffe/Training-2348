@@ -1,0 +1,14 @@
+- Projects due next Friday
+  - Talk about setting up a code freeze
+    - Say 24 or 48 hours before the deadline, halt all progress on new features
+    - Can clean up bugs if things aren't working
+    - Preparing Presentation
+    - Prioritize fully-completed features over
+- Java Level 2 Coding Challenge
+  - Due by Friday
+  - Be wary of how the input is handled
+- Interpersonal Skills Assessment on Rev Pro tomorrow (Friday 1/30)
+  - Video Evaluation
+  - Assesses Communication and Behavioral skills
+- Mock Interviews on 2/2/2026
+- Some mock interviews with Rory this week

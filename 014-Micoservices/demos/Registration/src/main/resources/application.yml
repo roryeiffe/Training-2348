@@ -5,6 +5,11 @@ server:
 spring:
   application:
     name: registration-service
+  cloud:
+    config:
+      enabled: false
+    consul:
+      enabled: false
   datasource:
     url: jdbc:h2:mem:registrations
     driver-class-name: org.h2.Driver
