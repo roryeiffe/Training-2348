@@ -1,0 +1,14 @@
+server:
+  port: 8080 # central port number to interact with
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        enabled: true
+
+## Actuator Config can also go here:

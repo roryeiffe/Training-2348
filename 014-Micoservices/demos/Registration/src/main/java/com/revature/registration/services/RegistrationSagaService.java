@@ -6,6 +6,7 @@ import com.revature.registration.enums.RegistrationStatus;
 import com.revature.registration.feign.WorkshopClient;
 import com.revature.registration.models.Registration;
 import com.revature.registration.repositories.RegistrationRepository;
+import com.revature.registration.resilience.WorkshopGateway;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,11 +16,13 @@ public class RegistrationSagaService  {
     private RegistrationProjector registrationProjector;
     // Used to make requests to the other service via Feign
     private WorkshopClient workshopClient;
+    private WorkshopGateway workshopGateway;
 
-    public RegistrationSagaService (RegistrationRepository registrationRepository, RegistrationProjector registrationProjector, WorkshopClient workshopClient) {
+    public RegistrationSagaService (RegistrationRepository registrationRepository, RegistrationProjector registrationProjector, WorkshopClient workshopClient, WorkshopGateway workshopGateway) {
         this.registrationRepository = registrationRepository;
         this.registrationProjector = registrationProjector;
         this.workshopClient = workshopClient;
+        this.workshopGateway = workshopGateway;
     }
 
     public Registration register(Long userId, Long workshopId) {
@@ -31,10 +34,12 @@ public class RegistrationSagaService  {
 
         try {
             // Now that we have a pending registration, we can try to actually reserve the seat, using Feign:
-            workshopClient.reserve(workshopId, new SeatRequest(registration.getId()));
+//            workshopClient.reserve(workshopId, new SeatRequest(registration.getId()));
+                workshopGateway.reserveSeat(workshopId, new SeatRequest(registration.getId())).join();
 
             try {
-                workshopClient.confirm(workshopId, new SeatRequest(registration.getId()));
+//                workshopClient.confirm(workshopId, new SeatRequest(registration.getId()));
+                workshopGateway.reserveSeat(workshopId, new SeatRequest(registration.getId())).join(); // wait here until future completes, if future fails, will throw a CompletionException
                 // Assuming this executed properly, haven't gone to the catch block yet
                 registration.setStatus(RegistrationStatus.CONFIRMED);
                 registrationRepository.save(registration);
@@ -42,7 +47,8 @@ public class RegistrationSagaService  {
                 return registration;
             } catch(Exception confirmFailure) {
                 // If something went wrong with the confirm operation, we need to release the seat (Compensating Action)
-                workshopClient.release(workshopId, new SeatRequest(registration.getId()));
+//                workshopClient.release(workshopId, new SeatRequest(registration.getId()));
+                workshopGateway.releaseSeat(workshopId, new SeatRequest(registration.getId())).join();
                 // set status to FAILED:
                 registration.setStatus(RegistrationStatus.FAILED);
                 registrationRepository.save(registration);
@@ -67,8 +73,8 @@ public class RegistrationSagaService  {
             throw new IllegalStateException("Only CONFIRMED registrations can be cancelled");
         }
 
-        workshopClient.release(registration.getWorkshopId(), new SeatRequest(registrationId));
-
+//        workshopClient.release(registration.getWorkshopId(), new SeatRequest(registrationId));
+        workshopGateway.releaseSeat(registration.getWorkshopId(), new SeatRequest(registrationId)).join();
         registration.setStatus(RegistrationStatus.CANCELLED);
         registrationRepository.save(registration);
         registrationProjector.upsert(registration);

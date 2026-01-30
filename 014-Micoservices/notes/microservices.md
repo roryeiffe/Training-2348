@@ -123,3 +123,81 @@
   - Load Balancing
   - Circuit Breakers
 - Reduce boilerplate HTTP code
+
+## Consul
+- Service Discovery Tool
+- In the Microservice Architecture, we have many different services
+  - Services can register themselves with Consul
+  - This allows other services to discover them dynamically, by name, so if the address changes we can still find it
+
+### Why this is Important
+- Microservices
+  - Can change what address/ports they're running on
+  - Require the ability to scale up to meet demand 
+    - If we hard-coded the address, the requests would go there no matter what
+    - But if we search for the service by name, and we have scaled up a given service by running multiple instances, load balancing can take effect and distribute the requests across multiple instances
+
+## Load Balancing
+- Distributes incoming requests to multiple instances of a service
+- Benefits
+  - Improves Performance
+    - One service won't get overloaded
+  - Increases availability
+- Integrates with
+  - Feign Client
+    - In our Feign client, we will specify the name of the service, load balancing will make it so we distribute requests across that service (assuming multiple instances are running)
+  - Spring Cloud Gateway
+
+## Circuit Breaker (Resilience 4j)
+- A fault-tolerance mechanism that helps to prevent cascading failures in microservice architecture
+### Example of the Problem
+- Registration service calls Workshop service
+- If Workshop service becomes slow or unavailable, then the Registration service wait and wait 
+- System becomes slower as registration system waits
+- Circuit Breaker will let us specify behavior for "waiting" on other services, wait time, fallback behavior, retry behavior
+
+### Circuit Breaker Behavior
+- Closed - requests will flow as normal
+- Open - requests fall flat
+- Half-Open - used to test if services have recovered
+
+### Why it's Important
+- System Stability 
+- Prevents total outages
+- Better feedback about system operations
+
+### Downstream vs Upstream
+- Downstream - a service that is being called (Workshop)
+- Upstream - a service that calls another one (Registration)
+
+## Cloud Gateway
+- Spring Cloud Gateway is a lightweight, reactive API Gateway built on Spring WebFlux
+
+- Sit at the edge of our system and acts a single entry point for client requests, routing them to the appropriate service
+- Right now, we have multiple services, each running on different ports
+  - Could be confusing for the client application, managing different address, ports, etc.
+  - With Cloud Gateway, we will have one entrypoint to our back-end system and the requests will be forwarded to the proper service
+  - Integrates with load balancing
+    - Client sends request to Gateway
+    - Gateway identifies which service to send it to
+    - If we have multiple instances and we configure the Gateway properly, the request could be sent to any of those instances
+- Without a Gateway
+  - Client would have to know every service URL
+  - Also would have to update client code whenever an individual service endpoint changes
+- With a Gateway
+  - Clients talk to one URL
+  - Routing logic exists in one place
+  - Lets us change up the back-end services more freely
+  - We can configure rules to hide our internal controller
+- React/Front-End
+  - Will call the Cloud Gateway
+    - Gateway will handle the forwarding
+  - All we need to know from the front-end side is what address/port the Gateway is service is running on because that will be our entry point to the system
+  - Other services are still running, where the requests are being forwarded to
+
+## Cloud Config Server
+- Centralized configuration for all of our services
+- Configuration is stored in a centralized location (like Git)
+- Allows for consistent configuration across services
+- Easy to update configuration in one place
+- If we need to change some of this info, we don't need to redeploy the app 

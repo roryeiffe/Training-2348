@@ -1,7 +1,9 @@
 # server.port=8082
 server:
   port: 8082
-
+# To convert to .properties, just replace indents with .
+# spring.application.name=
+# spring.cloud.config
 spring:
   application:
     name: registration-service
@@ -9,22 +11,53 @@ spring:
     config:
       enabled: false
     consul:
-      enabled: false
+      enabled: true
   datasource:
     url: jdbc:h2:mem:registrations
     driver-class-name: org.h2.Driver
     username: sa
     password: password
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/workshop # in SQL: create database workshop;
+#    username: postgres
+#    password: root
+#    driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
         format_sql: true # see SQL statements printed/formatted in our terminal
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+
+## Resilience Circuit Breaker
+resilience4j:
+  circuitbreaker:
+    instances:
+      workshop:
+        slidingWindowType: COUNT_BASED # Evaluate based on N most recent calls (as opposed to time-based evaluation)
+        slidingWindowSize: 10 # Specify how many recent calls
+        minimumNumberOfCalls: 5 # Specify a minimum number of calls required so we don't make decisions based on small datasets
+        # ex: if only 2 calls were made and 1 failed, we're already at a 50% failure when that one failure could have been a fluke
+        failureRateThreshold: 50 # Threshold that trips the breaker if surpassed
+        waitDurationInOpenState: 10s # How long circuit stays open until attempting recovery
+        permittedNumberOfCallsInHalfOpenState: 2 # How many calls will be made during recovery mode
+        automaticTransitionFromOpenToHalfOpenEnabled: true #transition to half-open mode to attempt the recovery automatically
+  timelimiter:
+    instances:
+      workshop:
+        timeoutDuration: 2s # Force the services to fail fast instead of holding/waiting on an unresponsive service
+  retry:
+    instances:
+      workshop:
+        maxAttempts: 2
+        waitDuration: 200ms
+
+
 
 # Actuator, enable endpoints:
 management:
@@ -34,6 +67,6 @@ management:
         include: health, info
 
 # Used to store the address for the workshop service locally
-workshop:
-  service:
-    url: http://localhost:8081
+#workshop:
+#  service:
+#    url: http://localhost:8081

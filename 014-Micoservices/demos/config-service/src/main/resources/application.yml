@@ -1,0 +1,14 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    config: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/roryeiffe/spring-cloud-config-1-30-2026
+          default-label: main
+          clone-on-start: true
