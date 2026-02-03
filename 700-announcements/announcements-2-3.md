@@ -1,0 +1,11 @@
+- Projects due Friday morning
+- KnowBe4 trainings - try to complete before end of training (Friday EOD)
+- After Training
+  - "Staging" - time between training and placement
+    - Wait for and prepare for interviews
+    - You will still get paid
+  - Won't have to meet on the training call
+  - Should be a staging orientation meeting
+- Cumulative QC Monday at 9 EST
+- SQL Level 2 Coding Challenge due Friday
+- QC Exam due end of day

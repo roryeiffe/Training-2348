@@ -13,7 +13,7 @@ WORKDIR /example
 # Now that we have our base image, required dependencies, and a working directory, we can 
 
 # To start, define a simple HelloWorld class
-RUN echo 'public class HelloWorld { public static void main(String [] args) {System.out.println("Hello World");}}' > HelloWorld.java
+RUN echo 'public class HelloWorld { public static void main(String [] args) {System.out.println("Hello World updated");}}' > HelloWorld.java
 
 # Compile the file
 RUN javac HelloWorld.java

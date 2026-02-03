@@ -44,3 +44,26 @@
   - But requires the most work to set up, rigid requirements, comprehensive tests
   - Requires more detailed/rigorous pipelines
 - Because the push to production is automated, can have less risky deployments if we deploy in small changes and receive user feedback consistently
+
+## Sonar Tools
+- Help detect bugs, issues, code smells with our codebases
+  - Vulnerabilities
+    - Security, exposing credentials, exposing some field that should be private
+  - Bugs
+    - Functionality of the code
+  - Maintainability
+    - Confusing code
+    - Repeated Code, DRY
+    - Unused imports
+    - Empty Code Blocks
+    - Unaddressed comments (especially those marked with TODO)
+- Sonar Cloud
+  - Online offering of Sonar capabilities
+  - We can navigate to the website, sign up (with Git is an option)
+  - We integrate our Git repos and run checks on our code
+  - We will get a report of all of the different code smells that Sonar detects
+- Sonar Lint
+  - Extension for VSCode (SonarQube for IDE), plugin for IntelliJ
+- Sonar Qube - 
+  - Self-hosted option, we install/setup/manage a particular instance
+  - Comes with more customizability

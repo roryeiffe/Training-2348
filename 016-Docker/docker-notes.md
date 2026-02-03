@@ -72,5 +72,6 @@
 - docker ps - list running containers (add -a flag to list all containers)
 - docker build -t java-hello-world .
 - docker run java-hello-world
+- docker run --rm grycap/cowsay
 - docker pull *image name*
 - docker push *image name*
