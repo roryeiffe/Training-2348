@@ -102,6 +102,24 @@
   - If we send some sort of request from the instance, we will be allowed to take in the response regardless of the inbound rules
   - If we receive a request, we should be able to send a response regardless of the outbound rules
 
-## RDS
+## RDS - Relational Database Service
+- AWS's service for relational databases
+- Pick our dialect, PostgreSQL in our case
+- Configure version, storage, backups
+- Spin up a database instance
+  - Connect to it from DBeaver
+  - Could also specify credentials in our application.properties
 
-## S3
+## S3 - Simple Storage Service
+- While RDS stores structured data (rigid tables, schemas), we can use S3 to store unstructured data (html, text, pdfs, videos, images, zip files)
+- S3 lets us create buckets which can store objects
+- We can control access to individual objects using ACLs (Access Control Lists)
+- We can host front-end pages by uploading an html file to our bucket
+  - Ensure the html file is public
+  - Configure static website settings
+- Each item has its own url
+  - We can use this to upload profile pictures to the S3 bucket and just use the url to the image in our database
+- S3 has different tiers of storage
+  - Each has their own pros/cons including cost, time of retrieval
+    - For example, if we archive some data, it might cost less but take longer to retrieve if we need it
+  - https://www.cloudkeeper.com/cms-assets/s3fs-public/2023-07/diagram%203.png
