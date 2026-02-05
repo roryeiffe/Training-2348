@@ -1,0 +1,16 @@
+- Present at 10 EST
+- Afternoon can be used for studying for the QC/interviews, Knowbe4
+- Include Slides On
+  - Overview of team and roles, what did everyone work on
+  - Technologies Used
+    - Standard techs from training and anything else you added
+  - Challenges Faced
+  - Lessons Learned
+    - "What would you do differently?"
+  - Can include a slide that just says "Demo" and that's the signal to transition from the slides to the showcase of the application
+- Presentation
+  - Each team member should speak
+  - Cover all use cases
+  - Business Professional Attire (just for presentation)
+    - Cameras on if your team is presenting
+  - If you're not talking, mics muted
