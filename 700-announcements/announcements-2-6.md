@@ -1,0 +1,6 @@
+- Monday QC at 9 EST
+  - Cumulative - studying focus on topics that are new or you received feedback on
+  - Quiz also on Monday
+- Going forward, until we get selected, will meet in the main training room briefly in the morning to go over what we're working on
+- Make sure to finish SQL coding challenge on Rev Pro
+- Study for interviews
