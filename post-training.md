@@ -1,0 +1,14 @@
+## Stuff to Work On
+- Conceptual Practice
+  - Self-Study
+  - Mock Interviews with peers
+  - Reading through Rev Pro topics (for applicable topics)
+- Practical
+  - Revisit/Revise Projects
+    - Refactor old projects to use new technologies
+    - For P0, could add front-end (would also need to refactor back-end into web app as opposed to command-line)
+  - Coding Challenges Online
+    - https://www.hackerrank.com/
+    - https://www.codecademy.com/code-challenges
+    - https://leetcode.com/
+    - https://www.codewars.com/
